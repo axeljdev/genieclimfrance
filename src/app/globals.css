@@ -4,11 +4,17 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px theme("colors.primary");
 }

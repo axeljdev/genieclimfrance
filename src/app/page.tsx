@@ -1,7 +1,19 @@
+import Article from "./components/home/Article";
+import BannerMid from "./components/home/BannerMid";
+import Hero from "./components/home/Hero";
+import Slider from "./components/home/Slider";
+import FormDevis from "./components/home/FormDevis";
+import Video from "./components/home/Video";
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <Hero />
+      <Slider />
+      <Article />
+      <BannerMid />
+      <Video />
+      <FormDevis />
+    </>
   );
 }
