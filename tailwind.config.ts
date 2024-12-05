@@ -16,8 +16,8 @@ export default {
         hover: "#3EAB3D",
       },
       fontFamily: {
-        emOne: ['"EmOne"', "sans-serif"],
-        kollektif: ['"Kollektif"', "sans-serif"],
+        emOne: ["var(--font-em-one)", "sans-serif"],
+        kollektif: ["var(--font-kollektif)", "sans-serif"],
       },
       screens: {
         xl: "1400px",

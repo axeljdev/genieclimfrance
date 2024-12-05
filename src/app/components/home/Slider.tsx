@@ -105,7 +105,7 @@ export default function App() {
         className="h-full lg:h-[25rem] 2xl:h-[30rem]"
       >
         <SwiperSlide style={ballonStyle}>
-          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[32rem] p-6">
+          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[40rem] p-6">
             <h3 className="text-white text-xl lg:text-2xl font-bold uppercase font-emOne">
               Ballon Thermodynamique
             </h3>
@@ -124,7 +124,7 @@ export default function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide style={isolationStyle}>
-          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[32rem] p-6">
+          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[40rem] p-6">
             <h3 className="text-white text-xl lg:text-2xl font-bold uppercase">
               Isolation (ITE, Plancher Bas, Combles)
             </h3>
@@ -143,7 +143,7 @@ export default function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide style={pacStyle}>
-          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[32rem] p-6">
+          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[40rem] p-6">
             <h3 className="text-white text-xl lg:text-2xl font-bold uppercase">
               Pompe à Chaleur
             </h3>
@@ -162,7 +162,7 @@ export default function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide style={vmcStyle}>
-          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[32rem] p-6">
+          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[40rem] p-6">
             <h3 className="text-white text-xl lg:text-2xl font-bold uppercase">
               VMC
             </h3>
@@ -181,7 +181,7 @@ export default function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide style={menuiseriesStyle}>
-          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[32rem] p-6">
+          <div className="lg:h-[90%] lg:w-[45rem] lg:p-10 lg:mr-60 bg-secondary/80 rounded-3xl m-6 lg:ml-4 xl:mr-[25rem] 2xl:mr-[40rem] p-6">
             <h3 className="text-white text-xl lg:text-2xl font-bold uppercase">
               Menuiseries
             </h3>

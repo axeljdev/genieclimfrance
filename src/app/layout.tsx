@@ -4,15 +4,48 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer/Footer";
 
-const EmOne = localFont({
-  src: "./fonts/EmOne-SemiBold.ttf",
+// EmOne variants
+const EmOneSemiBold = localFont({
+  src: [
+    {
+      path: "./fonts/EmOne-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/EmOne-SemiBoldItalic.ttf",
+      weight: "600",
+      style: "italic",
+    },
+  ],
   variable: "--font-em-one",
-  weight: "100 900",
 });
+
+// Kollektif variants
 const Kollektif = localFont({
-  src: "./fonts/Kollektif.ttf",
+  src: [
+    {
+      path: "./fonts/Kollektif.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Kollektif-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Kollektif-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/Kollektif-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
   variable: "--font-kollektif",
-  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${EmOne.variable} ${Kollektif.variable}`}>
+      <body className={`${EmOneSemiBold.variable} ${Kollektif.variable}`}>
         <Navbar />
         {children}
         <Footer />

@@ -4,6 +4,7 @@ import Hero from "./components/home/Hero";
 import Slider from "./components/home/Slider";
 import FormDevis from "./components/home/FormDevis";
 import Video from "./components/home/Video";
+import Solutions from "./components/home/Solutions";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <BannerMid />
       <Video />
       <FormDevis />
+      <Solutions />
     </>
   );
 }
