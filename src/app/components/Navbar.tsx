@@ -53,7 +53,7 @@ function Navbar() {
                 >
                   <li>
                     <Link
-                      href="/"
+                      href="/services/isolation"
                       className="hover:text-primary hover:bg-transparent active:bg-primary focus-visible:outline-primary"
                     >
                       ISOLATION
@@ -61,7 +61,7 @@ function Navbar() {
                   </li>
                   <li>
                     <Link
-                      href="/"
+                      href="/services/pompe-a-chaleur"
                       className="hover:text-primary hover:bg-transparent active:bg-primary focus-visible:outline-primary"
                     >
                       POMPES A CHALEUR
@@ -69,7 +69,7 @@ function Navbar() {
                   </li>
                   <li>
                     <Link
-                      href="/"
+                      href="/services/ballon-thermodynamique"
                       className="hover:text-primary hover:bg-transparent active:bg-primary focus-visible:outline-primary"
                     >
                       BALLON THERMODYNAMIQUE
