@@ -22,6 +22,25 @@ export default {
       screens: {
         xl: "1400px",
       },
+      keyframes: {
+        fill93: {
+          "0%": { width: "0%" },
+          "100%": { width: "93%" },
+        },
+        fill100: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+        fill95: {
+          "0%": { width: "0%" },
+          "100%": { width: "95%" },
+        },
+      },
+      animation: {
+        "fill-93": "fill93 2s ease-in-out forwards",
+        "fill-100": "fill100 2s ease-in-out forwards",
+        "fill-95": "fill95 2s ease-in-out forwards",
+      },
     },
   },
   plugins: [require("daisyui")],
