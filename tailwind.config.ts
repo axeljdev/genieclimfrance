@@ -35,11 +35,21 @@ export default {
           "0%": { width: "0%" },
           "100%": { width: "95%" },
         },
+        fill85: {
+          "0%": { width: "0%" },
+          "100%": { width: "85%" },
+        },
+        fill90: {
+          "0%": { width: "0%" },
+          "100%": { width: "90%" },
+        },
       },
       animation: {
         "fill-93": "fill93 2s ease-in-out forwards",
         "fill-100": "fill100 2s ease-in-out forwards",
         "fill-95": "fill95 2s ease-in-out forwards",
+        "fill-85": "fill85 2s ease-in-out forwards",
+        "fill-90": "fill90 2s ease-in-out forwards",
       },
     },
   },

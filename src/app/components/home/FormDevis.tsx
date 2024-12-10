@@ -1,10 +1,20 @@
 import InfoContact from "./InfoContact";
 
-function FormDevis() {
+function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
   return (
-    <section className="flex flex-col lg:flex-row gap-4 p-6 bg-secondary lg:px-[10.5rem] 2xl:px-72 lg:bg-[url('/bg-contact.png')] lg:bg-cover lg:bg-center lg:bg-no-repeat">
-      <div className="lg:bg-secondary lg:rounded-3xl lg:w-2/3 lg:p-12">
-        <h3 className="text-2xl font-emOne text-tertiary lg:pl-12">
+    <section
+      className={`flex flex-col lg:flex-row gap-4 p-6 bg-secondary lg:px-[10.5rem] 2xl:px-72 ${
+        isServicePage
+          ? "lg:bg-white"
+          : "lg:bg-[url('/bg-contact.png')] lg:bg-cover lg:bg-center lg:bg-no-repeat"
+      }`}
+    >
+      <div
+        className={`lg:bg-secondary lg:rounded-3xl ${
+          isServicePage ? "w-full" : "lg:w-2/3"
+        } lg:p-12`}
+      >
+        <h3 className="text-2xl font-emOne text-tertiary text-start lg:pl-12">
           Demander un devis
         </h3>
         <form className="flex flex-col gap-4 p-6 items-center lg:px-12">
@@ -118,7 +128,7 @@ function FormDevis() {
           </label>
         </form>
       </div>
-      <InfoContact />
+      {!isServicePage && <InfoContact />}
     </section>
   );
 }

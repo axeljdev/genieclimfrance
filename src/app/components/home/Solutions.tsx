@@ -7,11 +7,26 @@ import ButtonSolution from "./ButtonSolution";
 
 function Solutions() {
   const solutions = [
-    { id: 1, icon: pac, title: "Pompe à chaleur" },
-    { id: 2, icon: ballon, title: "Ballon thermodynamique" },
-    { id: 3, icon: isolation, title: "Isolation" },
-    { id: 4, icon: vmc, title: "VMC" },
-    { id: 5, icon: menuiseries, title: "Menuiserie" },
+    {
+      id: 1,
+      icon: pac,
+      title: "Pompe à chaleur",
+      link: "/services/pompe-a-chaleur",
+    },
+    {
+      id: 2,
+      icon: ballon,
+      title: "Ballon thermodynamique",
+      link: "/services/ballon-thermodynamique",
+    },
+    { id: 3, icon: isolation, title: "Isolation", link: "/services/isolation" },
+    { id: 4, icon: vmc, title: "VMC", link: "/services/vmc" },
+    {
+      id: 5,
+      icon: menuiseries,
+      title: "Menuiserie",
+      link: "/services/menuiserie",
+    },
   ];
   return (
     <section className="flex flex-col gap-4 p-8 xl:px-20 2xl:px-[9.5rem] lg:my-10">
@@ -24,6 +39,7 @@ function Solutions() {
             key={solution.id}
             icon={solution.icon}
             title={solution.title}
+            link={solution.link}
           />
         ))}
       </div>

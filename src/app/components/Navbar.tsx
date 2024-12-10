@@ -12,15 +12,20 @@ import Link from "next/link";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const closeDrawer = () => {
+    const checkbox = document.getElementById("my-drawer-3") as HTMLInputElement;
+    if (checkbox) checkbox.checked = false;
+  };
+
   return (
     <div className="drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col font-bold">
         {/* Navbar */}
         <div className="navbar w-full flex gap-4 p-4">
-          <div className="mx-2 flex-1 px-2">
+          <Link href="/" className="mx-2 flex-1 px-2">
             <Image src={logo} alt="logo" width={150} className="lg:w-[200px]" />
-          </div>
+          </Link>
           <div className="flex-none lg:hidden">
             <button className="btn btn-circle bg-primary hover:bg-hover text-white">
               <FaPhoneVolume className="text-xl" />
@@ -115,7 +120,9 @@ function Navbar() {
         >
           {/* Sidebar content here */}
           <li>
-            <Image src={logo} alt="logo" width={200} />
+            <Link href="/" onClick={closeDrawer}>
+              <Image src={logo} alt="logo" width={200} />
+            </Link>
           </li>
           <li className="mt-4">
             <details
@@ -129,17 +136,29 @@ function Navbar() {
               </summary>
               <ul>
                 <li>
-                  <Link href="/" tabIndex={0}>
+                  <Link
+                    href="/services/isolation"
+                    tabIndex={0}
+                    onClick={closeDrawer}
+                  >
                     ISOLATION
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" tabIndex={0}>
+                  <Link
+                    href="/services/pompe-a-chaleur"
+                    tabIndex={0}
+                    onClick={closeDrawer}
+                  >
                     POMPES A CHALEUR
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" tabIndex={0}>
+                  <Link
+                    href="/services/ballon-thermodynamique"
+                    tabIndex={0}
+                    onClick={closeDrawer}
+                  >
                     BALLON THERMODYNAMIQUE
                   </Link>
                 </li>
@@ -147,10 +166,16 @@ function Navbar() {
             </details>
           </li>
           <li>
-            <a tabIndex={0}>ACTUALITÉS</a>
+            <a tabIndex={0} onClick={closeDrawer}>
+              ACTUALITÉS
+            </a>
           </li>
           <li>
-            <a className="flex items-center gap-4" tabIndex={0}>
+            <a
+              className="flex items-center gap-4"
+              tabIndex={0}
+              onClick={closeDrawer}
+            >
               OÙ NOUS TROUVER
               <FaMapLocationDot className="text-2xl text-primary" />
             </a>
