@@ -80,22 +80,40 @@ function Navbar() {
                       BALLON THERMODYNAMIQUE
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/services/menuiserie"
+                      className="hover:text-primary hover:bg-transparent active:bg-primary focus-visible:outline-primary"
+                    >
+                      MENUISERIE
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/services/vmc"
+                      className="hover:text-primary hover:bg-transparent active:bg-primary focus-visible:outline-primary"
+                    >
+                      VMC
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <li
                 className="font-emOne hover:text-primary focus-visible:outline-primary"
                 tabIndex={0}
               >
-                <a>ACTUALITÉS</a>
+                <Link href="/notre-histoire" tabIndex={0} onClick={closeDrawer}>
+                  NOTRE HISTOIRE
+                </Link>
               </li>
               <li
                 className="font-emOne hover:text-primary focus-visible:outline-primary"
                 tabIndex={0}
               >
-                <a>
+                <Link href="/ou-nous-trouver">
                   <FaMapLocationDot className="text-2xl text-primary focus-visible:outline-primary" />
                   OÙ NOUS TROUVER
-                </a>
+                </Link>
               </li>
               <li>
                 <button className="btn rounded-full bg-primary hover:bg-hover text-white flex items-center gap-2">
@@ -162,23 +180,33 @@ function Navbar() {
                     BALLON THERMODYNAMIQUE
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/services/menuiserie"
+                    tabIndex={0}
+                    onClick={closeDrawer}
+                  >
+                    MENUISERIE
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services/vmc" tabIndex={0} onClick={closeDrawer}>
+                    VMC
+                  </Link>
+                </li>
               </ul>
             </details>
           </li>
           <li>
-            <a tabIndex={0} onClick={closeDrawer}>
-              ACTUALITÉS
-            </a>
+            <Link href="/notre-histoire" tabIndex={0} onClick={closeDrawer}>
+              NOTRE HISTOIRE
+            </Link>
           </li>
           <li>
-            <a
-              className="flex items-center gap-4"
-              tabIndex={0}
-              onClick={closeDrawer}
-            >
+            <Link href="/eligibility" tabIndex={0} onClick={closeDrawer}>
               OÙ NOUS TROUVER
               <FaMapLocationDot className="text-2xl text-primary" />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

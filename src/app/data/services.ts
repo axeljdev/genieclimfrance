@@ -8,6 +8,12 @@ import isolationIcon from "../../../public/icon/isolation.svg";
 import pacImage from "../../../public/imgarticlepac.png";
 import ballonImage from "../../../public/ballonimg.png";
 import isolationImage from "../../../public/isolimg.png";
+import vmcIcon from "../../../public/icon/vmc.svg";
+import vmcArticle from "../../../public/vmcarticle.webp";
+import vmcImage from "../../../public/vmcbg.webp";
+import menuiseriesIcon from "../../../public/icon/menuiseries.svg";
+import menuiseriesImage from "../../../public/menuiseriebg.png";
+import menuiseriesArticle from "../../../public/menuiserieimg.png";
 
 type Service = {
   name: string;
@@ -36,7 +42,7 @@ type Service = {
 export const services: { [key: string]: Service } = {
   "pompe-a-chaleur": {
     name: "pompe-a-chaleur",
-    title: "Pompe à Chaleur",
+    title: "Votre pompe à chaleur",
     description: "Solution écologique pour le chauffage de votre maison",
     content: [
       "Polyvalente et performante, elle permet de chauffer votre maison en hiver, de la rafraîchir en été et de produire de l'eau chaude sanitaire.",
@@ -82,7 +88,7 @@ export const services: { [key: string]: Service } = {
   },
   "ballon-thermodynamique": {
     name: "ballon-thermodynamique",
-    title: "Ballon Thermodynamique",
+    title: "Votre ballon thermodynamique",
     description: "La solution écologique pour votre eau chaude",
     content: [
       "Le ballon thermodynamique est la solution écologique et économique de référence.",
@@ -104,7 +110,7 @@ export const services: { [key: string]: Service } = {
   },
   isolation: {
     name: "isolation",
-    title: "Isolation",
+    title: "Votre isolation",
     description: "Optimisez l'efficacité énergétique de votre habitat",
     content: [
       "Améliorez la performance énergétique de votre maison grâce à une isolation sur mesure.",
@@ -152,5 +158,49 @@ export const services: { [key: string]: Service } = {
         },
       ],
     },
+  },
+  vmc: {
+    name: "vmc",
+    title: "Votre VMC",
+    description: "Votre VMC est une solution écologique et économique",
+    content: [
+      "La VMC (Ventilation Mécanique Contrôlée) est une solution écologique et économique pour votre maison.",
+      "Elle permet de maintenir une qualité d'air intérieur sain et de réduire vos factures de chauffage.",
+    ],
+    image: vmcImage,
+    bgImage: "bg-[url('/vmcbg.webp')]",
+    icon: vmcIcon,
+    titleArticle: "VMC : Ventilation Mécanique Contrôlée",
+    text1:
+      "La VMC (Ventilation Mécanique Contrôlée) est une solution écologique et économique pour votre maison.",
+    text2:
+      "Elle permet de maintenir une qualité d'air intérieur sain et de réduire vos factures de chauffage.",
+    text3:
+      "La VMC est une solution écologique et économique pour votre maison.",
+    image2: vmcArticle,
+    eco: 85,
+    efficiency: 100,
+    esthetic: 100,
+  },
+  menuiserie: {
+    name: "menuiserie",
+    title: "Vos menuiserie",
+    description: "La rénovation de vos fenêtres",
+    content: [
+      "Votre menuiseries sont une solution écologique et économique",
+      "Elle permet de maintenir une qualité d'air intérieur sain et de réduire vos factures de chauffage.",
+    ],
+    image: menuiseriesImage,
+    bgImage: "bg-[url('/menuiseriebg.png')]",
+    icon: menuiseriesIcon,
+    titleArticle: "La rénovation de vos fenêtres",
+    text1:
+      "La menuiserie joue un rôle essentiel dans la construction et l'aménagement des espaces.",
+    text2:
+      "Optez pour des menuiseries modernes et isolantes pour améliorer le confort et l'esthétique de votre maison. Choisissez des fenêtres, portes et voletd qui allient design et performance énergétique pour permettre le passage des personnes, de l'air et de la lumière, tout en garantissant la protection et l'isolation thermique de votre habitation.",
+    image2: menuiseriesArticle,
+    eco: 85,
+    efficiency: 85,
+    esthetic: 100,
   },
 };

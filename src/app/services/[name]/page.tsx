@@ -40,7 +40,7 @@ export default async function ServicePage({
           />
           <div className="relative z-5 lg:w-2/3 lg:px-16">
             <h1 className="text-3xl text-center mt-8 font-emOne uppercase text-tertiary">
-              Votre {service.title}
+              {service.title}
             </h1>
           </div>
         </header>

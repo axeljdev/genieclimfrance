@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IoIosArrowForward } from "react-icons/io";
 
 function Hero() {
@@ -18,10 +19,13 @@ function Hero() {
             </span>
           </p>
           <div className="flex flex-col lg:flex-row lg:items-center lg:mt-10 xl:mt-16 font-emOne lg:gap-8 xl:gap-10">
-            <button className="btn xl:btn-lg bg-primary text-white text-lg xl:text-xl font-bold uppercase mt-8 px-8 lg:mt-0 rounded-full hover:bg-hover">
+            <Link
+              href="/eligibility"
+              className="btn xl:btn-lg bg-primary text-white text-lg xl:text-xl font-bold uppercase mt-8 px-8 lg:mt-0 rounded-full hover:bg-hover"
+            >
               Test d&apos;éligibilité
               <IoIosArrowForward />
-            </button>
+            </Link>
             <button className="btn xl:btn-lg bg-secondary border-none text-white text-md xl:text-lg font-bold uppercase mt-4 lg:mt-0 px-4 rounded-full hover:bg-secondary/80">
               Contactez-nous
             </button>
