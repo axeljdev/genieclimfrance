@@ -24,7 +24,7 @@ function page() {
             irréprochables.
           </p>
           <Link
-            href="/contact"
+            href="/eligibility"
             className="btn lg:btn-lg xl:btn-lg bg-secondary border-none text-white w-fit self-center text-md xl:text-lg font-bold uppercase mt-4 px-4 rounded-full hover:bg-secondary/80 lg:mt-16"
           >
             Nous contacter
