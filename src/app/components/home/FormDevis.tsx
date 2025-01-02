@@ -17,7 +17,10 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
         <h3 className="text-2xl font-emOne text-tertiary text-start lg:pl-12">
           Demander un devis
         </h3>
-        <form className="flex flex-col gap-4 p-6 items-center lg:px-12">
+        <form
+          id="contact-form"
+          className="flex flex-col gap-4 p-6 items-center lg:px-12"
+        >
           <div className="flex flex-col lg:flex-row lg:justify-between w-full lg:gap-8">
             <label className="form-control w-full lg:w-1/3 max-w-xs lg:max-w-none">
               <div className="label">

@@ -6,6 +6,8 @@ import Image from "next/image";
 import logo from "@/../public/logo.svg";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { FaMapLocationDot } from "react-icons/fa6";
+import { GrValidate } from "react-icons/gr";
+
 import { IoIosArrowDown } from "react-icons/io";
 import Link from "next/link";
 
@@ -27,9 +29,12 @@ function Navbar() {
             <Image src={logo} alt="logo" width={150} className="lg:w-[200px]" />
           </Link>
           <div className="flex-none lg:hidden">
-            <button className="btn btn-circle bg-primary hover:bg-hover text-white">
+            <a
+              href="tel:+33972121401"
+              className="btn btn-circle bg-primary hover:bg-hover text-white"
+            >
               <FaPhoneVolume className="text-xl" />
-            </button>
+            </a>
           </div>
           <div className="flex-none lg:hidden">
             <label
@@ -102,24 +107,27 @@ function Navbar() {
                 className="font-emOne hover:text-primary focus-visible:outline-primary"
                 tabIndex={0}
               >
-                <Link href="/notre-histoire" tabIndex={0} onClick={closeDrawer}>
-                  NOTRE HISTOIRE
+                <Link href="/notre-mission" tabIndex={0} onClick={closeDrawer}>
+                  NOTRE MISSION
                 </Link>
               </li>
               <li
                 className="font-emOne hover:text-primary focus-visible:outline-primary"
                 tabIndex={0}
               >
-                <Link href="/ou-nous-trouver">
+                <Link href="/notre-histoire#retrouvez-nous">
                   <FaMapLocationDot className="text-2xl text-primary focus-visible:outline-primary" />
                   OÙ NOUS TROUVER
                 </Link>
               </li>
               <li>
-                <button className="btn rounded-full bg-primary hover:bg-hover text-white flex items-center gap-2">
-                  <FaPhoneVolume className="text-xl" />
-                  09 72 12 14 01
-                </button>
+                <Link
+                  href="/eligibility"
+                  className="btn rounded-full bg-primary hover:bg-hover text-white flex items-center gap-2"
+                >
+                  <GrValidate className="text-xl" />
+                  TEST D&apos;ÉLIGIBILITÉ
+                </Link>
               </li>
             </ul>
           </div>
@@ -206,6 +214,17 @@ function Navbar() {
             <Link href="/eligibility" tabIndex={0} onClick={closeDrawer}>
               OÙ NOUS TROUVER
               <FaMapLocationDot className="text-2xl text-primary" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/eligibility"
+              tabIndex={0}
+              onClick={closeDrawer}
+              className="btn rounded-full bg-primary hover:bg-hover text-white flex items-center w-fit"
+            >
+              TEST D&apos;ÉLIGIBILITÉ
+              <GrValidate className="text-xl" />
             </Link>
           </li>
         </ul>

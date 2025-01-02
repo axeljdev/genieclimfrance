@@ -1,5 +1,5 @@
 import Form from "./components/Form";
-
+import FormDevis from "../components/home/FormDevis";
 function page() {
   return (
     <>
@@ -28,10 +28,11 @@ function page() {
           d&apos;énergie CEE. Ce dispositif a été mis en place depuis plus de
           deux ans en France
         </p>
-        <p className="text-xl font-bold font-kollektif text-secondary">
+        <p className="text-xl font-bold font-kollektif text-secondary mb-16">
           Rénover votre logement n&apos;a jamais été aussi facile avec GENIE
           CLIM FRANCE.
         </p>
+        <FormDevis isServicePage={true} />
       </article>
     </>
   );
