@@ -26,11 +26,13 @@ function Footer() {
           <ul className="flex flex-col gap-2">
             <li className="flex items-center gap-2 hover:text-tertiary transition-colors duration-300 cursor-pointer">
               <IoMail className="text-primary" />
-              <p>contact@genieclimfrance.fr</p>
+              <a href="mailto:contact@genieclimfrance.fr">
+                contact@genieclimfrance.fr
+              </a>
             </li>
             <li className="flex items-center gap-2 hover:text-tertiary transition-colors duration-300 cursor-pointer">
               <IoMdPhonePortrait className="text-primary" />
-              <p>09 72 12 14 01</p>
+              <a href="tel:0972121401">09 72 12 14 01</a>
             </li>
           </ul>
         </div>
@@ -43,19 +45,16 @@ function Footer() {
               <Link href="/">Accueil</Link>
             </li>
             <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
-              <Link href="/">Nos produits</Link>
+              <Link href="/notre-mission">Notre mission</Link>
             </li>
             <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
-              <Link href="/">Solution de financement</Link>
+              <Link href="/eligibility">Éligibilité</Link>
             </li>
             <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
-              <Link href="/">Contactez-nous</Link>
+              <Link href="/notre-mission#retrouvez-nous">Contactez-nous</Link>
             </li>
             <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
-              <Link href="/">A propos</Link>
-            </li>
-            <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
-              <Link href="/">Mentions légales</Link>
+              <Link href="/mentions-legales">Mentions légales</Link>
             </li>
           </ul>
         </div>
@@ -65,16 +64,21 @@ function Footer() {
           </h3>
           <ul className="flex flex-col gap-2">
             <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
-              <Link href="/">PAC Air / Air</Link>
+              <Link href="/services/pompe-a-chaleur">Pompe à chaleur</Link>
             </li>
             <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
-              <Link href="/">PAC Air / Eau</Link>
+              <Link href="/services/vmc">VMC</Link>
             </li>
             <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
-              <Link href="/">Ballon thermodynamique</Link>
+              <Link href="/services/ballon-thermodynamique">
+                Ballon thermodynamique
+              </Link>
             </li>
             <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
-              <Link href="/">Isolation</Link>
+              <Link href="/services/isolation">Isolation</Link>
+            </li>
+            <li className="hover:text-tertiary transition-colors duration-300 cursor-pointer">
+              <Link href="/services/menuiserie">Menuiseries</Link>
             </li>
           </ul>
         </div>

@@ -1,9 +1,63 @@
-import InfoContact from "./InfoContact";
+"use client";
 
+import InfoContact from "./InfoContact";
+import { useState } from "react";
 function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
+  const [Name, setName] = useState("");
+  const [FirstName, setFirstName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Phone, setPhone] = useState("");
+  const [Message, setMessage] = useState("");
+  const [Zipcode, setZipcode] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nom: `${FirstName} ${Name}`,
+          email: Email,
+          telephone: Phone,
+          message: Message,
+          adresse: "",
+          codePostal: Zipcode,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.details || data.message || "Erreur inconnue");
+      }
+
+      // Réinitialiser le formulaire
+      setName("");
+      setFirstName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+      setZipcode("");
+
+      // Afficher un message de succès
+      alert("Votre message a été envoyé avec succès !");
+    } catch (error) {
+      console.error("Erreur détaillée:", error);
+      alert(
+        `Une erreur est survenue : ${
+          error instanceof Error ? error.message : "Erreur inconnue"
+        }`
+      );
+    }
+  };
+
   return (
     <section
-      className={`flex flex-col lg:flex-row gap-4 p-6 bg-secondary lg:px-[10.5rem] 2xl:px-72 ${
+      id="contact-form"
+      className={`flex flex-col lg:flex-row gap-4 p-6 bg-secondary lg:px-[10.5rem] 2xl:px-[21.5rem] ${
         isServicePage
           ? "lg:bg-white"
           : "lg:bg-[url('/bg-contact.png')] lg:bg-cover lg:bg-center lg:bg-no-repeat"
@@ -18,8 +72,8 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
           Demander un devis
         </h3>
         <form
-          id="contact-form"
           className="flex flex-col gap-4 p-6 items-center lg:px-12"
+          onSubmit={handleSubmit}
         >
           <div className="flex flex-col lg:flex-row lg:justify-between w-full lg:gap-8">
             <label className="form-control w-full lg:w-1/3 max-w-xs lg:max-w-none">
@@ -31,6 +85,8 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
               <input
                 type="text"
                 placeholder="Votre nom"
+                value={Name}
+                onChange={(e) => setName(e.target.value)}
                 className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
                 required
               />
@@ -44,6 +100,8 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
               <input
                 type="text"
                 placeholder="Votre prénom"
+                value={FirstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
                 required
               />
@@ -57,6 +115,8 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
               <input
                 type="text"
                 placeholder="Votre code postal"
+                value={Zipcode}
+                onChange={(e) => setZipcode(e.target.value)}
                 className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
                 required
               />
@@ -72,6 +132,8 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
               <input
                 type="text"
                 placeholder="Votre email"
+                value={Email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
                 required
               />
@@ -86,6 +148,8 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
                 type="text"
                 placeholder="Votre téléphone"
                 className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
+                value={Phone}
+                onChange={(e) => setPhone(e.target.value)}
               />
             </label>
           </div>
@@ -99,6 +163,8 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
               className="textarea textarea-bordered h-24 focus:outline-primary focus:ring-primary"
               placeholder="Votre message"
               required
+              value={Message}
+              onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <div className="form-control mt-4 lg:max-w-[26.5rem]">
               <label className="label cursor-pointer">

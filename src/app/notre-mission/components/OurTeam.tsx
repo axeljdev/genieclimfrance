@@ -27,27 +27,11 @@ const cards = [
     phone: "07 69 76 26 36",
   },
   {
-    id: 4,
-    img: test,
-    name: "Corine Gammelin",
-    role: "Technico-Commercial",
-    mail: "c.gammelin@genielimfrance.fr",
-    phone: "07 69 76 26 36",
-  },
-  {
     id: 5,
     img: test,
     name: "Amélie Auger",
     role: "Analyste administrative",
     mail: "a.auger@genielimfrance.fr",
-    phone: "07 69 76 26 36",
-  },
-  {
-    id: 6,
-    img: test,
-    name: "Charlotte Ballet",
-    role: "Analyste technique",
-    mail: "c.ballet@genielimfrance.fr",
     phone: "07 69 76 26 36",
   },
   {
@@ -75,7 +59,7 @@ function OurTeam() {
             <CardTeam key={card.id} {...card} />
           ))}
           <a
-            href="https://www.linkedin.com/company/genie-clim-france/"
+            href="https://fr.indeed.com/cmp/Genie-Clim-France/jobs"
             target="_blank"
             className="bg-primary text-tertiary w-full text-center py-10 rounded-lg shadow-xl uppercase font-emOne hover:bg-primary/80 transition-all duration-300 lg:w-[30%] flex justify-center items-center"
           >

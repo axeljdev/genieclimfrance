@@ -115,7 +115,7 @@ function Navbar() {
                 className="font-emOne hover:text-primary focus-visible:outline-primary"
                 tabIndex={0}
               >
-                <Link href="/notre-histoire#retrouvez-nous">
+                <Link href="/notre-mission#retrouvez-nous">
                   <FaMapLocationDot className="text-2xl text-primary focus-visible:outline-primary" />
                   OÙ NOUS TROUVER
                 </Link>
@@ -206,8 +206,8 @@ function Navbar() {
             </details>
           </li>
           <li>
-            <Link href="/notre-histoire" tabIndex={0} onClick={closeDrawer}>
-              NOTRE HISTOIRE
+            <Link href="/notre-mission" tabIndex={0} onClick={closeDrawer}>
+              NOTRE MISSION
             </Link>
           </li>
           <li>

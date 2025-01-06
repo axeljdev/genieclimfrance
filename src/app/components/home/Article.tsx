@@ -3,12 +3,12 @@ import imgGcf from "@/../public/img-gcf.png";
 
 function Article() {
   return (
-    <article className="flex flex-col lg:items-center lg:justify-center xl:gap-14 lg:flex-row p-8 xl:px-20 lg:p-24">
-      <div className="lg:w-1/2">
-        <h2 className="text-2xl lg:text-3xl font-bold uppercase pb-1 font-emOne">
+    <article className="flex flex-col lg:items-center lg:justify-center xl:gap-14 lg:flex-row p-8 xl:px-20 lg:p-24 2xl:px-36">
+      <div className="lg:w-1/2 2xl:text-xl">
+        <h2 className="text-2xl lg:text-3xl 2xl:text-4xl font-bold uppercase pb-1 font-emOne">
           Génieclim france
         </h2>
-        <h3 className="text-sm font-bold uppercase pb-4 after:content-[''] after:mt-2 after:block after:w-10 after:h-[0.35rem] after:bg-primary font-emOne">
+        <h3 className="text-sm font-bold uppercase pb-4 2xl:text-xl after:content-[''] after:mt-2 after:block after:w-10 after:h-[0.35rem] after:bg-primary font-emOne">
           La référence de la rénovation globale énergétique
         </h3>
         <p className="pb-4 font-kollektif lg:pt-6">

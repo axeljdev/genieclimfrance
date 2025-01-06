@@ -5,7 +5,7 @@ function InfoContact() {
       <p>Téléphone: +33 9 72 12 14 02</p>
       <p>Email: contact@genieclimfrance.fr</p>
       <h4 className="font-bold text-primary uppercase">
-        géniclim france - Siège social
+        génieclim france - Siège social
       </h4>
       <p>20 rue jean Mermoz, 33185 lE HAILLAN</p>
       <h4 className="font-bold text-primary uppercase">

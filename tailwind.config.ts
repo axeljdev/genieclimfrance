@@ -21,6 +21,7 @@ export default {
       },
       screens: {
         xl: "1400px",
+        "3xl": "2240px",
       },
       keyframes: {
         fill93: {

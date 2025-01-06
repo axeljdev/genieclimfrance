@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer/Footer";
+import Axeptio from "./components/Axeptio";
 
 // EmOne variants
 const EmOneSemiBold = localFont({
@@ -65,6 +66,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Axeptio />
       </body>
     </html>
   );

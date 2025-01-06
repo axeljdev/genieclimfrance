@@ -14,7 +14,7 @@ function ButtonSolution({
   return (
     <Link
       href={link}
-      className="bg-[#f9F9F9] text-secondary px-4 h-16 lg:h-24 lg:w-[28.5rem] 2xl:w-[41rem] 2xl:text-xl 2xl:h-36 rounded-xl shadow-md flex items-center justify-between gap-2 uppercase font-bold hover:bg-primary hover:text-white group transition-all duration-300 cursor-pointer"
+      className="bg-[#f9F9F9] text-secondary px-4 h-16 w-full lg:h-24 lg:max-w-[28.5rem] xl:max-w-[30rem] 2xl:max-w-[37rem] 3xl:max-w-[47rem] 2xl:text-xl 2xl:h-36 rounded-xl shadow-md flex items-center justify-between gap-2 uppercase font-bold hover:bg-primary hover:text-white group transition-all duration-300 cursor-pointer"
     >
       <Image
         src={icon}

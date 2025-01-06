@@ -11,7 +11,7 @@ function page() {
           <h1 className="text-4xl font-emOne uppercase text-tertiary mb-8 lg:mb-10">
             Notre{" "}
             <span className="text-primary bg-tertiary rounded-full px-2 lg:px-4">
-              histoire
+              mission
             </span>
           </h1>
           <p className="text-xl font-kollektif text-tertiary">

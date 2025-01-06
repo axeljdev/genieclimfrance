@@ -37,7 +37,7 @@ const cards = [
 
 function Agency() {
   return (
-    <section id="retrouvez-nous">
+    <section id="retrouvez-nous" className="scroll-mt-24">
       <h3 className="text-xl font-emOne uppercase text-secondary mb-4 mt-8 lg:text-2xl lg:mt-16 2xl:text-3xl">
         Retrouvez-nous
       </h3>
