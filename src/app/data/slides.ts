@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image";
-import ballon from "@/../public/ballon.png";
-import isolation from "@/../public/isolation.png";
-import pac from "@/../public/pac.jpg";
+import ballon from "@/../public/ballon.webp";
+import isolation from "@/../public/isolation.webp";
+import pac from "@/../public/pac.webp";
 import vmc from "@/../public/vmc.jpg";
-import menuiseries from "@/../public/menuiserie.jpeg";
+import menuiseries from "@/../public/menuiserie.webp";
 
 interface Slide {
   id: number;
