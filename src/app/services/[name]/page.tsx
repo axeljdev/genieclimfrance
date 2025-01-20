@@ -8,14 +8,12 @@ import BrandBanner from "./components/BrandBanner";
 import MidBanner from "./components/MidBanner";
 import FormDevis from "@/app/components/home/FormDevis";
 
-interface ServicePageProps {
-  params: {
-    name: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-}
+type Props = {
+  params: { name: string };
+  searchParams: Record<string, string | string[] | undefined>;
+};
 
-export default function ServicePage({ params }: ServicePageProps) {
+export default async function ServicePage({ params }: Props) {
   const { name } = params;
   const service = services[name];
 
