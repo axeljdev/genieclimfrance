@@ -8,12 +8,8 @@ import BrandBanner from "./components/BrandBanner";
 import MidBanner from "./components/MidBanner";
 import FormDevis from "@/app/components/home/FormDevis";
 
-export default async function ServicePage({
-  params,
-}: {
-  params: { name: string };
-}) {
-  const { name } = await params;
+export default function ServicePage({ params }: { params: { name: string } }) {
+  const { name } = params;
   const service = services[name];
 
   if (!service) {
