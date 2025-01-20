@@ -6,7 +6,7 @@ import Article from "./components/Article";
 function page() {
   return (
     <>
-      <header className="flex flex-col lg:flex-row bg-[url('/hero-mobile-pages.png')] lg:bg-[url('/hero-desktop-history.png')] bg-cover bg-center bg-no-repeat px-8 py-12 lg:px-20 lg:items-center 2xl:px-40">
+      <header className="flex flex-col lg:flex-row bg-[url('/hero-mobile-pages.webp')] lg:bg-[url('/hero-desktop-history.webp')] bg-cover bg-center bg-no-repeat px-8 py-12 lg:px-20 lg:items-center 2xl:px-40">
         <div className="lg:w-2/3 lg:px-16">
           <h1 className="text-4xl font-emOne uppercase text-tertiary mb-8 lg:mb-10">
             Notre{" "}

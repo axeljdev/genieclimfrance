@@ -3,7 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 function Hero() {
   return (
-    <header className="relative min-h-[50vh] lg:min-h-[90vh] bg-cover bg-center bg-no-repeat lg:bg-[url('/hero-desktop.png')] bg-[url('/hero-mobile.png')]">
+    <header className="relative min-h-[50vh] lg:min-h-[90vh] bg-cover bg-center bg-no-repeat lg:bg-[url('/hero-desktop.webp')] bg-[url('/hero-mobile.webp')]">
       <div className="container xl:mx-0 p-8 lg:px-28 lg:py-16 2xl:p-28 2xl:px-80">
         <div className="max-w-[50rem] flex flex-col items-center lg:items-start">
           <h1 className="text-white text-2xl lg:text-5xl xl:text-6xl lg:leading-tight xl:leading-tight uppercase font-bold mb-8">

@@ -1,19 +1,19 @@
-import pac from "../../../public/pac.jpg";
-import ballon from "../../../public/ballon.png";
-import isolation from "../../../public/isolation.png";
+import pac from "../../../public/pac.webp";
+import ballon from "../../../public/ballon.webp";
+import isolation from "../../../public/isolation.webp";
 import { StaticImageData } from "next/image";
 import pacIcon from "../../../public/icon/pac.svg";
 import ballonIcon from "../../../public/icon/ballon.svg";
 import isolationIcon from "../../../public/icon/isolation.svg";
-import pacImage from "../../../public/imgarticlepac.png";
-import ballonImage from "../../../public/ballonimg.png";
-import isolationImage from "../../../public/isolimg.png";
+import pacImage from "../../../public/imgarticlepac.webp";
+import ballonImage from "../../../public/ballonimg.webp";
+import isolationImage from "../../../public/isolimg.webp";
 import vmcIcon from "../../../public/icon/vmc.svg";
 import vmcArticle from "../../../public/vmcarticle.webp";
 import vmcImage from "../../../public/vmcbg.webp";
 import menuiseriesIcon from "../../../public/icon/menuiseries.svg";
-import menuiseriesImage from "../../../public/menuiseriebg.png";
-import menuiseriesArticle from "../../../public/menuiserieimg.png";
+import menuiseriesImage from "../../../public/menuiseriebg.webp";
+import menuiseriesArticle from "../../../public/menuiserieimg.webp";
 
 type Service = {
   name: string;
