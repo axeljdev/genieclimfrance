@@ -21,7 +21,7 @@ function Video() {
         Ils nous ont fait confiance !
       </h4>
       <div
-        className="elfsight-app-0224fa09-b6f7-4029-99e3-083308edb8e8 pl-24 xl:pl-0"
+        className="elfsight-app-0224fa09-b6f7-4029-99e3-083308edb8e8 lg:pl-24 xl:pl-0"
         data-elfsight-app-lazy="false"
       />
     </section>
