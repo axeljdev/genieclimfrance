@@ -7,19 +7,15 @@ import Accordion from "./components/Accordion";
 import BrandBanner from "./components/BrandBanner";
 import MidBanner from "./components/MidBanner";
 import FormDevis from "@/app/components/home/FormDevis";
-import { Metadata } from "next";
 
-type PageParams = {
-  name: string;
+type Props = {
+  params: Promise<{
+    name: string;
+  }>;
 };
 
-type PageProps = {
-  params: Promise<PageParams>;
-};
-
-export default async function ServicePage({ params }: PageProps) {
-  const resolvedParams = await params;
-  const { name } = resolvedParams;
+export default async function ServicePage({ params }: Props) {
+  const { name } = await params;
   const service = services[name];
 
   if (!service) {
@@ -30,7 +26,7 @@ export default async function ServicePage({ params }: PageProps) {
     <>
       <div className="relative">
         <header
-          className={`relative flex flex-col items-center ${service.bgImage} h-[22.5rem] lg:h-[25.5rem] xl:h-[21rem] bg-cover bg-center bg-no-repeat px-8 py-24 lg:px-20 2xl:px-40`}
+          className={`relative flex flex-col items-center ${service.bgImage} h-[22.5rem] lg:h-[20.5rem] xl:h-[21rem] bg-cover bg-center bg-no-repeat px-8 py-24 lg:px-20 2xl:px-40`}
         >
           <div className="absolute inset-0 bg-black/30" />
           <Image
@@ -52,7 +48,7 @@ export default async function ServicePage({ params }: PageProps) {
         </header>
         <Buttons />
       </div>
-      <div className="flex flex-col lg:flex-row lg:px-32 2xl:px-56 lg:gap-8 lg:pt-24 lg:mb-16">
+      <div className="flex flex-col lg:flex-row lg:px-40 2xl:px-96 lg:gap-8 lg:pt-24 lg:mb-16">
         <div className="flex flex-col flex-1 lg:gap-8">
           <article className="px-8 lg:px-0 pt-32 lg:pt-0">
             <h2 className="text-xl 2xl:text-2xl font-emOne uppercase after:content-[''] after:block after:w-16 after:h-1 after:bg-primary after:mt-4">
@@ -82,22 +78,24 @@ export default async function ServicePage({ params }: PageProps) {
           />
         </div>
       </div>
-      {service.name === "pompe-a-chaleur" ||
-        (service.name === "isolation" && service.accordion && (
+      {(service.name === "pompe-a-chaleur" ||
+        service.name === "isolation" ||
+        service.name === "ballon-thermodynamique") &&
+        service.accordion && (
           <Accordion sections={service.accordion.sections} />
-        ))}
+        )}
       <BrandBanner />
       <MidBanner />
       <section className="flex flex-col items-center justify-center gap-8 text-center lg:mb-8 ">
         <h3 className="text-2xl 2xl:text-3xl font-emOne uppercase text-center after:content-[''] after:block after:w-16 after:h-1 after:bg-primary after:mt-4 after:mx-auto mt-16">
           Prêt à faire de réelles économies ?
         </h3>
-        <p className="text-lg 2xl:text-xl lg:text-base mt-8 lg:mx-48 2xl:mx-[32rem] xl:mx-[20rem]">
+        <p className="text-lg 2xl:text-xl mx-8 lg:text-base mt-8 lg:mx-48 2xl:mx-[32rem] xl:mx-[20rem]">
           Contactez un de nos experts chez GENIECLIM FRANCE pour bénéficier
           d&apos;une étude gratuite et personnalisée de votre dossier afin de
           trouver la solution la plus adaptée à votre logement.
         </p>
-        <p className="text-lg 2xl:text-xl lg:text-base 2xl:mx-[32rem]">
+        <p className="text-lg 2xl:text-xl mx-8 lg:text-base 2xl:mx-[32rem]">
           Nous vous guiderons également pour découvrir les aides financières
           auxquelles vous pourriez bénéficier.
         </p>
@@ -105,22 +103,4 @@ export default async function ServicePage({ params }: PageProps) {
       </section>
     </>
   );
-}
-
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  const resolvedParams = await params;
-  const service = services[resolvedParams.name];
-
-  if (!service) {
-    return {
-      title: "Service non trouvé",
-    };
-  }
-
-  return {
-    title: service.title,
-    description: service.description,
-  };
 }
