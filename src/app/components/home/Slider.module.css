@@ -12,13 +12,14 @@
 }
 
 /* Styles pour les flèches de navigation */
-:global(.swiper-button-next),
-:global(.swiper-button-prev) {
+.navigationButton :global(.swiper-button-next),
+.navigationButton :global(.swiper-button-prev) {
   color: theme("colors.primary") !important;
 }
 
 /* Style pour la barre de progression */
-:global(.swiper-pagination-progressbar .swiper-pagination-progressbar-fill) {
+.progressBar
+  :global(.swiper-pagination-progressbar .swiper-pagination-progressbar-fill) {
   background: theme("colors.primary") !important;
 }
 

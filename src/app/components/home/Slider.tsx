@@ -41,7 +41,7 @@ export default function Slider() {
         keyboard={true}
         loop={true}
         modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
-        className="h-full lg:h-[25rem] 2xl:h-[30rem]"
+        className={`h-full lg:h-[25rem] 2xl:h-[30rem] ${styles.navigationButton} ${styles.progressBar}`}
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
