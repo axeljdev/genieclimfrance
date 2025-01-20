@@ -8,7 +8,14 @@ import BrandBanner from "./components/BrandBanner";
 import MidBanner from "./components/MidBanner";
 import FormDevis from "@/app/components/home/FormDevis";
 
-export default function ServicePage({ params }: { params: { name: string } }) {
+interface ServicePageProps {
+  params: {
+    name: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+
+export default function ServicePage({ params }: ServicePageProps) {
   const { name } = params;
   const service = services[name];
 
