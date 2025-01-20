@@ -49,7 +49,7 @@ export const services: { [key: string]: Service } = {
       "Elle contribue à un mode de vie plus durable tout en augmentant la valeur de votre habitation.",
     ],
     image: pac,
-    bgImage: "bg-[url('/pac.jpg')]",
+    bgImage: "bg-[url('/pac.webp')]",
     icon: pacIcon,
     titleArticle: "Chauffage: La pompe à chaleur",
     text1:
@@ -95,7 +95,7 @@ export const services: { [key: string]: Service } = {
       "Vous pouvez réaliser jusqu'à 50% d'économie sur votre facture d'électricité.",
     ],
     image: ballon,
-    bgImage: "bg-[url('/ballon.png')]",
+    bgImage: "bg-[url('/ballon.webp')]",
     icon: ballonIcon,
     titleArticle: "Eau chaude sanitaire",
     text1:
@@ -117,7 +117,7 @@ export const services: { [key: string]: Service } = {
       "Notre programme complet inclut l'isolation des combles et des planchers bas pour une rénovation énergétique intégrale.",
     ],
     image: isolation,
-    bgImage: "bg-[url('/isolation.png')]",
+    bgImage: "bg-[url('/isolation.webp')]",
     icon: isolationIcon,
     titleArticle: "Les isolation : Combles, plancher bas, ITE",
     text1:
@@ -191,7 +191,7 @@ export const services: { [key: string]: Service } = {
       "Elle permet de maintenir une qualité d'air intérieur sain et de réduire vos factures de chauffage.",
     ],
     image: menuiseriesImage,
-    bgImage: "bg-[url('/menuiseriebg.png')]",
+    bgImage: "bg-[url('/menuiseriebg.webp')]",
     icon: menuiseriesIcon,
     titleArticle: "La rénovation de vos fenêtres",
     text1:
