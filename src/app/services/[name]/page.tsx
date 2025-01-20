@@ -7,13 +7,19 @@ import Accordion from "./components/Accordion";
 import BrandBanner from "./components/BrandBanner";
 import MidBanner from "./components/MidBanner";
 import FormDevis from "@/app/components/home/FormDevis";
+import { Metadata } from "next";
 
-interface PageProps {
-  params: { name: string };
-}
+type PageParams = {
+  name: string;
+};
 
-export default function ServicePage({ params }: PageProps) {
-  const { name } = params;
+type PageProps = {
+  params: Promise<PageParams>;
+};
+
+export default async function ServicePage({ params }: PageProps) {
+  const resolvedParams = await params;
+  const { name } = resolvedParams;
   const service = services[name];
 
   if (!service) {
@@ -99,4 +105,22 @@ export default function ServicePage({ params }: PageProps) {
       </section>
     </>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const service = services[resolvedParams.name];
+
+  if (!service) {
+    return {
+      title: "Service non trouvé",
+    };
+  }
+
+  return {
+    title: service.title,
+    description: service.description,
+  };
 }
