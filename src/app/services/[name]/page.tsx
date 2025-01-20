@@ -26,7 +26,7 @@ export default async function ServicePage({ params }: Props) {
     <>
       <div className="relative">
         <header
-          className={`relative flex flex-col items-center ${service.bgImage} h-[22.5rem] lg:h-[20.5rem] xl:h-[21rem] bg-cover bg-center bg-no-repeat px-8 py-24 lg:px-20 2xl:px-40`}
+          className={`relative flex flex-col items-center ${service.bgImage} h-[22.5rem] lg:h-[25.5rem] xl:h-[21rem] bg-cover bg-center bg-no-repeat px-8 py-24 lg:px-20 2xl:px-40`}
         >
           <div className="absolute inset-0 bg-black/30" />
           <Image
