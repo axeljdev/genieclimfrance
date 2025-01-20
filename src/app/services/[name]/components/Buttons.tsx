@@ -6,7 +6,7 @@ import { scrollToElement } from "@/app/Utils/SmoothScroll";
 
 export default function Buttons() {
   return (
-    <div className="flex flex-col lg:flex-row lg:gap-16 justify-center items-center absolute top-[19.5rem] lg:top-[18.75rem] xl:top-[14.5rem] 2xl:top-[14.5rem] w-full">
+    <div className="flex flex-col lg:flex-row lg:gap-16 justify-center items-center absolute top-[19.5rem] lg:top-[18.75rem] xl:top-[18.75rem] 2xl:top-[18.75rem] w-full">
       <Link
         href="#contact-form"
         onClick={(e) => scrollToElement(e, "#contact-form")}
