@@ -7,7 +7,6 @@ import Accordion from "./components/Accordion";
 import BrandBanner from "./components/BrandBanner";
 import MidBanner from "./components/MidBanner";
 import FormDevis from "@/app/components/home/FormDevis";
-import { Metadata } from "next";
 
 interface PageProps {
   params: { name: string };
@@ -100,21 +99,4 @@ export default function ServicePage({ params }: PageProps) {
       </section>
     </>
   );
-}
-
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  const service = services[params.name];
-
-  if (!service) {
-    return {
-      title: "Service non trouvé",
-    };
-  }
-
-  return {
-    title: service.title,
-    description: service.description,
-  };
 }
