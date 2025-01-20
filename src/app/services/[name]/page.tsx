@@ -9,11 +9,11 @@ import MidBanner from "./components/MidBanner";
 import FormDevis from "@/app/components/home/FormDevis";
 import { Metadata } from "next";
 
-interface Props {
+interface PageProps {
   params: { name: string };
 }
 
-export default function ServicePage({ params }: Props) {
+export default function ServicePage({ params }: PageProps) {
   const { name } = params;
   const service = services[name];
 
@@ -102,7 +102,9 @@ export default function ServicePage({ params }: Props) {
   );
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const service = services[params.name];
 
   if (!service) {
