@@ -7,13 +7,13 @@ import Accordion from "./components/Accordion";
 import BrandBanner from "./components/BrandBanner";
 import MidBanner from "./components/MidBanner";
 import FormDevis from "@/app/components/home/FormDevis";
+import { Metadata } from "next";
 
-type Props = {
+interface Props {
   params: { name: string };
-  searchParams: Record<string, string | string[] | undefined>;
-};
+}
 
-export default async function ServicePage({ params }: Props) {
+export default function ServicePage({ params }: Props) {
   const { name } = params;
   const service = services[name];
 
@@ -100,4 +100,19 @@ export default async function ServicePage({ params }: Props) {
       </section>
     </>
   );
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const service = services[params.name];
+
+  if (!service) {
+    return {
+      title: "Service non trouvé",
+    };
+  }
+
+  return {
+    title: service.title,
+    description: service.description,
+  };
 }
