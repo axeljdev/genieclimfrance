@@ -9,8 +9,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/client/:path*",
-        destination: "http://genieclim-france.fr/client/:path*",
+        source: "/clients/:path*",
+        destination: "http://genieclim-france.fr/clients/:path*",
         permanent: true,
       },
       {
