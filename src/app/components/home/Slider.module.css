@@ -23,6 +23,12 @@
   background: theme("colors.primary") !important;
 }
 
+.progressBar :global(.swiper-pagination-progressbar) {
+  top: auto !important;
+  bottom: 0 !important;
+  position: absolute !important;
+}
+
 .slide {
   @apply lg:h-[90%] lg:w-[45rem] lg:p-10 bg-secondary/80 rounded-3xl m-6 lg:ml-40 2xl:ml-80 2xl:w-[60rem] p-6;
 }
