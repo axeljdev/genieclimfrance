@@ -11,13 +11,13 @@ export default function Buttons() {
         href="#contact-form"
         onClick={(e) => scrollToElement(e, "#contact-form")}
       >
-        <button className="btn btn-lg w-[24rem] lg:h-[5rem] shadow-md flex items-center justify-between bg-primary border-none text-white text-md xl:text-lg font-bold uppercase mt-4 rounded-xl hover:bg-secondary lg:mt-16">
+        <button className="btn btn-lg w-[95vw] sm:w-[24rem] lg:h-[5rem] shadow-md flex items-center justify-between bg-primary border-none text-white text-base xl:text-lg font-bold uppercase mt-4 rounded-xl hover:bg-secondary lg:mt-16">
           Obtenir un devis
           <IoIosArrowForward className="ml-2" />
         </button>
       </Link>
       <Link href="/eligibility">
-        <button className="btn btn-lg bg-tertiary lg:h-[5rem] shadow-md border-none text-secondary self-center text-md xl:text-lg font-bold uppercase mt-2 rounded-xl hover:bg-secondary hover:text-white lg:mt-16">
+        <button className="btn btn-lg bg-tertiary w-[95vw] sm:w-[24rem] lg:h-[5rem] shadow-md border-none text-secondary self-center text-base xl:text-lg font-bold uppercase mt-2 rounded-xl hover:bg-secondary hover:text-white lg:mt-16">
           Estimer mes aides financières
           <IoIosArrowForward className="ml-2" />
         </button>
