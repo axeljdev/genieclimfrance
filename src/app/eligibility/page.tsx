@@ -3,7 +3,7 @@ import FormDevis from "../components/home/FormDevis";
 function page() {
   return (
     <>
-      <header className="lg:bg-[url('/img-formulaire.png')] bg-[url('/hero-mobile-pages.png')] bg-cover bg-center bg-no-repeat flex p-4 font-kollektif lg:p-0 lg:pr-20">
+      <header className="lg:bg-[url('/img-formulaire.png')] bg-[url('/hero-mobile-pages.webp')] bg-cover bg-center bg-no-repeat flex p-4 font-kollektif lg:p-0 lg:pr-20">
         <aside className="hidden text-4xl font-emOne uppercase lg:flex lg:flex-col lg:items-center lg:justify-center text-primary mb-8 w-1/2 lg:mb-10 p-4">
           <div className="text-white text-2xl font-emOne flex flex-col justify-center uppercase bg-primary bg-opacity-90 rounded-xl px-12 w-96 h-96">
             <p className="text-9xl font-emOne">1€</p>
