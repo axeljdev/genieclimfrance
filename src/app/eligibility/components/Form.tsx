@@ -8,6 +8,8 @@ function Form() {
   const [isEligible, setIsEligible] = useState(false);
   const [year, setYear] = useState<string>("");
   const [isOwner, setIsOwner] = useState<string>("proprietaire");
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
 
   const isHouseFifteenYearsOld = (constructionYear: number): boolean => {
     return currentYear - constructionYear >= 15;
@@ -33,6 +35,14 @@ function Form() {
   const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     smoothScroll("#contact-form");
+  };
+
+  const handleProductChange = (product: string) => {
+    setSelectedProducts((prev) =>
+      prev.includes(product)
+        ? prev.filter((p) => p !== product)
+        : [...prev, product]
+    );
   };
 
   if (isEligible) {
@@ -174,25 +184,98 @@ function Form() {
             <option value="bois">Bois</option>
           </select>
         </label>
-        <label
-          htmlFor="products"
-          className="label-text flex flex-col gap-2 lg:w-1/2"
-        >
-          <div className="flex items-center">
+        <div className="flex flex-col gap-2 lg:w-1/2">
+          <h3 className="flex items-center">
             Produits souhaités*
             <span className="text-xs ml-1">(en plus de la PAC)</span>
+          </h3>
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => setIsProductsOpen(!isProductsOpen)}
+              className="select select-bordered w-full text-left flex justify-between items-center focus:outline-primary focus:border-primary"
+            >
+              {selectedProducts.length === 0 ? (
+                <span className="text-gray-500">Sélectionner des produits</span>
+              ) : (
+                <span>{selectedProducts.length} produit(s) sélectionné(s)</span>
+              )}
+            </button>
+
+            {isProductsOpen && (
+              <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg">
+                <div className="p-2 space-y-2">
+                  <label className="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-100">
+                    <input
+                      type="checkbox"
+                      value="isolation combles"
+                      checked={selectedProducts.includes("isolation combles")}
+                      onChange={(e) => handleProductChange(e.target.value)}
+                      className="checkbox bg-tertiary [--chkbg:theme(colors.tertiary)] [--chkfg:theme(colors.primary)] mr-2 focus:outline-primary focus:ring-primary"
+                    />
+                    <span>Isolation combles</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-100">
+                    <input
+                      type="checkbox"
+                      value="isolation plancher bas"
+                      checked={selectedProducts.includes(
+                        "isolation plancher bas"
+                      )}
+                      onChange={(e) => handleProductChange(e.target.value)}
+                      className="checkbox bg-tertiary [--chkbg:theme(colors.tertiary)] [--chkfg:theme(colors.primary)] mr-2 focus:outline-primary focus:ring-primary"
+                    />
+                    <span>Isolation plancher bas</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-100">
+                    <input
+                      type="checkbox"
+                      value="isolation mur exterieur"
+                      checked={selectedProducts.includes(
+                        "isolation mur exterieur"
+                      )}
+                      onChange={(e) => handleProductChange(e.target.value)}
+                      className="checkbox bg-tertiary [--chkbg:theme(colors.tertiary)] [--chkfg:theme(colors.primary)] mr-2 focus:outline-primary focus:ring-primary"
+                    />
+                    <span>Isolation mur extérieur</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-100">
+                    <input
+                      type="checkbox"
+                      value="ballon thermodynamique"
+                      checked={selectedProducts.includes(
+                        "ballon thermodynamique"
+                      )}
+                      onChange={(e) => handleProductChange(e.target.value)}
+                      className="checkbox bg-tertiary [--chkbg:theme(colors.tertiary)] [--chkfg:theme(colors.primary)] mr-2 focus:outline-primary focus:ring-primary"
+                    />
+                    <span>Ballon thermodynamique</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-100">
+                    <input
+                      type="checkbox"
+                      value="menuiseries"
+                      checked={selectedProducts.includes("menuiseries")}
+                      onChange={(e) => handleProductChange(e.target.value)}
+                      className="checkbox bg-tertiary [--chkbg:theme(colors.tertiary)] [--chkfg:theme(colors.primary)] mr-2 focus:outline-primary focus:ring-primary"
+                    />
+                    <span>Menuiseries</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-100">
+                    <input
+                      type="checkbox"
+                      value="poele"
+                      checked={selectedProducts.includes("poele")}
+                      onChange={(e) => handleProductChange(e.target.value)}
+                      className="checkbox bg-tertiary [--chkbg:theme(colors.tertiary)] [--chkfg:theme(colors.primary)] mr-2 focus:outline-primary focus:ring-primary"
+                    />
+                    <span>Poêle</span>
+                  </label>
+                </div>
+              </div>
+            )}
           </div>
-          <select
-            name="products"
-            id="products"
-            required
-            className="select select-bordered mb-4 focus:outline-primary focus:border-primary focus:text-primary"
-          >
-            <option value="isolation">Isolation combles</option>
-            <option value="vmc">VMC</option>
-            <option value="menuiseries">Menuiseries</option>
-          </select>
-        </label>
+        </div>
       </div>
       <label
         htmlFor="isolation"

@@ -1,5 +1,6 @@
 import Form from "./components/Form";
 import FormDevis from "../components/home/FormDevis";
+
 function page() {
   return (
     <>

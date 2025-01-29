@@ -9,6 +9,7 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
   const [Phone, setPhone] = useState("");
   const [Message, setMessage] = useState("");
   const [Zipcode, setZipcode] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,8 +43,10 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
       setMessage("");
       setZipcode("");
 
-      // Afficher un message de succès
-      alert("Votre message a été envoyé avec succès !");
+      // Afficher le message de succès
+      setIsSubmitted(true);
+      // Masquer le message après 5 secondes
+      setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
       console.error("Erreur détaillée:", error);
       alert(
@@ -170,6 +173,7 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
               <label className="label cursor-pointer">
                 <input
                   type="checkbox"
+                  required
                   className="checkbox bg-tertiary [--chkbg:theme(colors.tertiary)] [--chkfg:theme(colors.primary)] mr-2 focus:outline-primary focus:ring-primary"
                 />
                 <p className="label-text text-tertiary ml-2">
@@ -194,6 +198,11 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
             <button className="btn border-none text-tertiary bg-primary hover:bg-primary/80 uppercase mt-6 font-emOne focus:outline-tertiary focus:ring-tertiary">
               Soumettre ma demande
             </button>
+            {isSubmitted && (
+              <p className="text-green-600 font-kollektif mt-4 text-center">
+                Message envoyé !
+              </p>
+            )}
           </label>
         </form>
       </div>
