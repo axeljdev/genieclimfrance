@@ -24,8 +24,8 @@ function Article() {
           Nous vous offrons des solutions clé en main pour améliorer
           l&apos;efficacité énergétique de votre maison. Que ce soit
           l&apos;isolation, installation de pompe à chaleur, d&apos;un ballon
-          thermodynamique, nous aons l&apos;expertise pour réaliser des travaux
-          de qualité inscrit dans le cadre du certificat d&apos;économie
+          thermodynamique, nous avons l&apos;expertise pour réaliser des travaux
+          de qualité inscrits dans le cadre du certificat d&apos;économie
           d&apos;énergie CEE.
         </p>
       </div>

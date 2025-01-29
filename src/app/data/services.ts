@@ -56,7 +56,7 @@ export const services: { [key: string]: Service } = {
       "Bénéficiez du meilleur système de chauffage du marché pour un confort thermique absolu, le tout à la force de l'air. La pompe à chaleur offre un fonctionnement simple et autonome. Vous obtenez facilement une chaleur douce et homogène dans toute votre maison.",
     text2:
       "La PAC produit de la chaleur à partir d'une énergie gratuite, celle de l'air !",
-    text3: "Grâce à cela, vous réduiez vos factures de chauffage jusqu'à 80%.",
+    text3: "Grâce à cela, vous réduisez vos factures de chauffage jusqu'à 80%.",
     image2: pacImage,
     eco: 93,
     efficiency: 100,
@@ -80,7 +80,16 @@ export const services: { [key: string]: Service } = {
         {
           title: "BIEN CHOISIR SA PAC",
           content: [
-            "La pompe à chaleur (PAC) eau-eau est un système de chauffage, qui assure le chauffage et la production d'eau chaude de votre logement.",
+            "Les deux principales caractéristiques à connaître pour juger de la performance d'une pompe à chaleur sont :",
+            "- le coefficient de performance (COP) indiqué en valeur saisonnière (SCOP pour le chauffage, SEER pour le rafraîchissement pour la PAC air-air), qui représente le nombre de kWh de chaleur produits, pour 1 kWh d'électricité consommée ;",
+            "- la puissance calorifique (en kW) qui représente la capacité de production de chaleur de la PAC : la puissance moyenne des PAC air-air se situe entre 2 et 20 kW.",
+            "Où placer le groupe extérieur ?",
+            "Nous vous conseillons tout de même de choisir un emplacement qui occasionne le moins de bruit possible pour votre voisinage (distance minimale, éviter les angles et recoins qui renvoient le son), mais aussi pour vous !",
+            "Choisissez un emplacement éloigné de vos fenêtres. Notez néanmoins que les modèles récents de pompes à chaleur sont moins bruyants, et que vous pouvez, si besoin, installer des plots antivibratiles ou un écran phonique pour atténuer le bruit.",
+            "Vous aurez en plus besoin d’un emplacement dans votre logement pour installer l’unité intérieure. La jonction entre les deux est assurée par un circuit de fluide frigorigène.",
+            "Dois-je prendre un contrat d'entretien pour ma PAC ?",
+            "Il est fortement recommandé de prendre un contrat d'entretien. 1 fois par an, votre matériel est entretenu et vérifié par une équipe de professionnel.",
+            "Notre équipe commerciale reste disponible pour vous proposer un contrat sur-mesure répondant à vos besoins.",
           ],
         },
       ],
@@ -125,7 +134,7 @@ export const services: { [key: string]: Service } = {
     text2:
       "Notre équipe de professionnels choisit des produits alliant confort et écologie pour une isolation saine et efficace.",
     text3:
-      "Le toit est la 1er source de déperdition de chaleur dans une maison. En isolant les combles, vous réduisez jusqu'à 30% vos factures de chauffage !",
+      "Le toit est la 1ère source de déperdition de chaleur dans une maison. En isolant les combles, vous réduisez jusqu'à 30% vos factures de chauffage !",
     image2: isolationImage,
     eco: 85,
     efficiency: 100,
@@ -136,25 +145,21 @@ export const services: { [key: string]: Service } = {
           title: "Isolation des combles",
           content: [
             "Aménagés, aménageables ou perdus, nous isolons tout vos espaces en contact avec des pièces chauffées.",
-            "Également, l'isolation des combles vous permet de maintenir la chaluer en hiver, vous pouvez ainsi gagner jusqu'à 3 degrés !",
+            "Également, l'isolation des combles vous permet de maintenir la chaleur en hiver, vous pouvez ainsi gagner jusqu'à 3 degrés !",
             "En été, vous conservez plus longtemps la fraîcheur dans votre maison.",
-            "Enfin, ces travaux vous premettent d'améliorer le DPE (Diagnostic de Performance Énergétique) de votre logement.",
+            "Enfin, ces travaux vous permettent d'améliorer le DPE (Diagnostic de Performance Énergétique) de votre logement.",
             "En moyenne, vous réalisez une plus-value de 5% pour chaque classe énergétique gagnée.",
             "Notre équipe s'attarde à choisir les meilleurs produits correspondant à vos besoins.",
-            "La laine est soufflée sera parfaite pour vos combles perdus, tandis que la laine en rouleaux servira vos combles aménageables ou aménagés.",
+            "La laine soufflée sera parfaite pour vos combles perdus, tandis que la laine en rouleaux servira vos combles aménageables ou aménagés.",
           ],
         },
         {
           title: "Isolation des planchers bas",
-          content: [
-            "La pompe à chaleur (PAC) air-air est un système de chauffage, qui assure le chauffage et la production d'eau chaude de votre logement.",
-          ],
+          content: [""],
         },
         {
           title: "ITE (isolation thermique extérieure)",
-          content: [
-            "La pompe à chaleur (PAC) eau-eau est un système de chauffage, qui assure le chauffage et la production d'eau chaude de votre logement.",
-          ],
+          content: [""],
         },
       ],
     },
@@ -197,7 +202,7 @@ export const services: { [key: string]: Service } = {
     text1:
       "La menuiserie joue un rôle essentiel dans la construction et l'aménagement des espaces.",
     text2:
-      "Optez pour des menuiseries modernes et isolantes pour améliorer le confort et l'esthétique de votre maison. Choisissez des fenêtres, portes et voletd qui allient design et performance énergétique pour permettre le passage des personnes, de l'air et de la lumière, tout en garantissant la protection et l'isolation thermique de votre habitation.",
+      "Optez pour des menuiseries modernes et isolantes pour améliorer le confort et l'esthétique de votre maison. Choisissez des fenêtres, portes et volets qui allient design et performance énergétique pour permettre le passage des personnes, de l'air et de la lumière, tout en garantissant la protection et l'isolation thermique de votre habitation.",
     image2: menuiseriesArticle,
     eco: 85,
     efficiency: 85,
