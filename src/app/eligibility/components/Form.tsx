@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 function Form() {
@@ -10,6 +10,13 @@ function Form() {
   const [isOwner, setIsOwner] = useState<string>("proprietaire");
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState<string[]>([]);
+  const [isTypeOpen, setIsTypeOpen] = useState(false);
+  const [isOwnerOpen, setIsOwnerOpen] = useState(false);
+  const [isEnergyOpen, setIsEnergyOpen] = useState(false);
+  const [isIsolationOpen, setIsIsolationOpen] = useState(false);
+  const [selectedType, setSelectedType] = useState("");
+  const [selectedEnergy, setSelectedEnergy] = useState("");
+  const [selectedIsolation, setSelectedIsolation] = useState("");
 
   const isHouseFifteenYearsOld = (constructionYear: number): boolean => {
     return currentYear - constructionYear >= 15;
@@ -44,6 +51,29 @@ function Form() {
         : [...prev, product]
     );
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const dropdowns = document.querySelectorAll("[data-dropdown]");
+      const buttons = document.querySelectorAll("[data-dropdown-button]");
+
+      dropdowns.forEach((dropdown, index) => {
+        if (
+          !dropdown.contains(event.target as Node) &&
+          !buttons[index]?.contains(event.target as Node)
+        ) {
+          setIsProductsOpen(false);
+          setIsTypeOpen(false);
+          setIsOwnerOpen(false);
+          setIsEnergyOpen(false);
+          setIsIsolationOpen(false);
+        }
+      });
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   if (isEligible) {
     if (isOwner === "proprietaire" && isHouseFifteenYearsOld(parseInt(year))) {
@@ -107,15 +137,46 @@ function Form() {
           className="label-text flex flex-col gap-2 lg:w-1/2"
         >
           Type de logement*
-          <select
-            name="type"
-            id="type"
-            required
-            className="select select-bordered mb-4 focus:outline-primary focus:border-primary focus:text-primary"
-          >
-            <option value="maison">Maison</option>
-            <option value="appartement">Appartement</option>
-          </select>
+          <div className="relative">
+            <button
+              type="button"
+              data-dropdown-button
+              onClick={() => setIsTypeOpen(!isTypeOpen)}
+              className="select select-bordered w-full text-left flex justify-between items-center focus:outline-primary focus:border-primary"
+            >
+              {selectedType || (
+                <span className="text-gray-500">Sélectionner un type</span>
+              )}
+            </button>
+
+            {isTypeOpen && (
+              <div
+                data-dropdown
+                className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg"
+              >
+                <div className="p-2 space-y-2">
+                  <div
+                    className="cursor-pointer p-2 hover:bg-gray-100"
+                    onClick={() => {
+                      setSelectedType("Maison");
+                      setIsTypeOpen(false);
+                    }}
+                  >
+                    Maison
+                  </div>
+                  <div
+                    className="cursor-pointer p-2 hover:bg-gray-100"
+                    onClick={() => {
+                      setSelectedType("Appartement");
+                      setIsTypeOpen(false);
+                    }}
+                  >
+                    Appartement
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </label>
         <label
           htmlFor="annee"
@@ -154,17 +215,50 @@ function Form() {
           className="label-text flex flex-col gap-2 lg:w-1/2"
         >
           Je suis*
-          <select
-            name="owner"
-            id="owner"
-            required
-            className="select select-bordered mb-4 focus:outline-primary focus:border-primary focus:text-primary"
-            value={isOwner}
-            onChange={(e) => setIsOwner(e.target.value)}
-          >
-            <option value="proprietaire">Propriétaire</option>
-            <option value="locataire">Locataire</option>
-          </select>
+          <div className="relative">
+            <button
+              type="button"
+              data-dropdown-button
+              onClick={() => setIsOwnerOpen(!isOwnerOpen)}
+              className="select select-bordered w-full text-left flex justify-between items-center focus:outline-primary focus:border-primary"
+            >
+              {isOwner === "proprietaire" ? (
+                "Propriétaire"
+              ) : isOwner === "locataire" ? (
+                "Locataire"
+              ) : (
+                <span className="text-gray-500">Je suis...</span>
+              )}
+            </button>
+
+            {isOwnerOpen && (
+              <div
+                data-dropdown
+                className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg"
+              >
+                <div className="p-2 space-y-2">
+                  <div
+                    className="cursor-pointer p-2 hover:bg-gray-100"
+                    onClick={() => {
+                      setIsOwner("proprietaire");
+                      setIsOwnerOpen(false);
+                    }}
+                  >
+                    Propriétaire
+                  </div>
+                  <div
+                    className="cursor-pointer p-2 hover:bg-gray-100"
+                    onClick={() => {
+                      setIsOwner("locataire");
+                      setIsOwnerOpen(false);
+                    }}
+                  >
+                    Locataire
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </label>
       </div>
       <div className="flex flex-col gap-4 lg:w-full lg:px-4 lg:flex-row">
@@ -173,25 +267,65 @@ function Form() {
           className="label-text flex flex-col gap-2 lg:w-1/2"
         >
           Pour me chauffer, j&apos;utilise...*
-          <select
-            name="energy"
-            id="energy"
-            required
-            className="select select-bordered mb-4 focus:outline-primary focus:border-primary focus:text-primary"
-          >
-            <option value="gaz">Gaz</option>
-            <option value="electricite">Electricité</option>
-            <option value="bois">Bois</option>
-          </select>
-        </label>
-        <div className="flex flex-col gap-2 lg:w-1/2">
-          <h3 className="flex items-center">
-            Produits souhaités*
-            <span className="text-xs ml-1">(en plus de la PAC)</span>
-          </h3>
           <div className="relative">
             <button
               type="button"
+              data-dropdown-button
+              onClick={() => setIsEnergyOpen(!isEnergyOpen)}
+              className="select select-bordered w-full text-left flex justify-between items-center focus:outline-primary focus:border-primary"
+            >
+              {selectedEnergy || (
+                <span className="text-gray-500">Sélectionner une énergie</span>
+              )}
+            </button>
+
+            {isEnergyOpen && (
+              <div
+                data-dropdown
+                className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg"
+              >
+                <div className="p-2 space-y-2">
+                  <div
+                    className="cursor-pointer p-2 hover:bg-gray-100"
+                    onClick={() => {
+                      setSelectedEnergy("Gaz");
+                      setIsEnergyOpen(false);
+                    }}
+                  >
+                    Gaz
+                  </div>
+                  <div
+                    className="cursor-pointer p-2 hover:bg-gray-100"
+                    onClick={() => {
+                      setSelectedEnergy("Electricité");
+                      setIsEnergyOpen(false);
+                    }}
+                  >
+                    Electricité
+                  </div>
+                  <div
+                    className="cursor-pointer p-2 hover:bg-gray-100"
+                    onClick={() => {
+                      setSelectedEnergy("Bois");
+                      setIsEnergyOpen(false);
+                    }}
+                  >
+                    Bois
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </label>
+        <div className="label-text flex flex-col gap-2 lg:w-1/2">
+          <label className="flex items-center">
+            Produits souhaités*
+            <span className="text-xs ml-1">(en plus de la PAC)</span>
+          </label>
+          <div className="relative">
+            <button
+              type="button"
+              data-dropdown-button
               onClick={() => setIsProductsOpen(!isProductsOpen)}
               className="select select-bordered w-full text-left flex justify-between items-center focus:outline-primary focus:border-primary"
             >
@@ -203,7 +337,10 @@ function Form() {
             </button>
 
             {isProductsOpen && (
-              <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg">
+              <div
+                data-dropdown
+                className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg"
+              >
                 <div className="p-2 space-y-2">
                   <label className="flex items-center gap-2 cursor-pointer p-2 hover:bg-gray-100">
                     <input
@@ -282,15 +419,46 @@ function Form() {
         className="label-text flex flex-col gap-2 lg:px-4"
       >
         Avez-vous déjà bénéfcié de l&apos;isolation à 1€ ?
-        <select
-          name="isolation"
-          id="isolation"
-          required
-          className="select select-bordered mb-4 focus:outline-primary focus:border-primary focus:text-primary"
-        >
-          <option value="oui">Oui</option>
-          <option value="non">Non</option>
-        </select>
+        <div className="relative">
+          <button
+            type="button"
+            data-dropdown-button
+            onClick={() => setIsIsolationOpen(!isIsolationOpen)}
+            className="select select-bordered w-full text-left flex justify-between items-center focus:outline-primary focus:border-primary"
+          >
+            {selectedIsolation || (
+              <span className="text-gray-500">Sélectionner une réponse</span>
+            )}
+          </button>
+
+          {isIsolationOpen && (
+            <div
+              data-dropdown
+              className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg"
+            >
+              <div className="p-2 space-y-2">
+                <div
+                  className="cursor-pointer p-2 hover:bg-gray-100"
+                  onClick={() => {
+                    setSelectedIsolation("Oui");
+                    setIsIsolationOpen(false);
+                  }}
+                >
+                  Oui
+                </div>
+                <div
+                  className="cursor-pointer p-2 hover:bg-gray-100"
+                  onClick={() => {
+                    setSelectedIsolation("Non");
+                    setIsIsolationOpen(false);
+                  }}
+                >
+                  Non
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
       </label>
       <button className="btn rounded-full bg-primary text-white hover:bg-primary/80 mx-4">
         TESTER MON ELIGIBILITE
