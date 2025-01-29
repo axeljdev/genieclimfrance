@@ -74,7 +74,7 @@ export const services: { [key: string]: Service } = {
         {
           title: "PAC AIR / AIR",
           content: [
-            "La pompe à chaleur (PAC) air-air est un système de chauffage, qui assure le chauffage et la production d'eau chaude de votre logement.",
+            "La pompe à chaleur (PAC) air-air est un système de chauffage, qui assure le chauffage de votre logement.",
           ],
         },
         {
