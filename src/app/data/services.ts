@@ -155,11 +155,17 @@ export const services: { [key: string]: Service } = {
         },
         {
           title: "Isolation des planchers bas",
-          content: [""],
+          content: [
+            "Pour isoler vos planchers bas, les dalles de polystyrène extrudé offriront une isolation sonore et thermique parfaite pour vos espaces.",
+          ],
         },
         {
           title: "ITE (isolation thermique extérieure)",
-          content: [""],
+          content: [
+            "L'isolation thermique extérieure (ITE) est une solution efficace pour réduire les pertes de chaleur dans votre maison.",
+            "Elle permet de réduire jusqu'à 30% vos factures de chauffage !",
+            "L'ITE est une solution écologique et économique pour votre maison.",
+          ],
         },
       ],
     },
