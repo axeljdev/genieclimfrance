@@ -80,7 +80,9 @@ export default async function ServicePage({ params }: Props) {
       </div>
       {(service.name === "pompe-a-chaleur" ||
         service.name === "isolation" ||
-        service.name === "ballon-thermodynamique") &&
+        service.name === "ballon-thermodynamique" ||
+        service.name === "menuiserie" ||
+        service.name === "vmc") &&
         service.accordion && (
           <Accordion sections={service.accordion.sections} />
         )}

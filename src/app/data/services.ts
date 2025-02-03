@@ -74,7 +74,12 @@ export const services: { [key: string]: Service } = {
         {
           title: "PAC AIR / AIR",
           content: [
-            "La pompe à chaleur (PAC) air-air est un système de chauffage, qui assure le chauffage de votre logement.",
+            "La pompe à chaleur Air/Air est un système de chauffage et de climatisation réversible qui capte les calories de l'air extérieur pour les transformer en chaleur dans votre logement. En été, elle fonctionne en sens inverse pour rafraîchir votre intérieur, garantissant ainsi un confort optimal toute l'année.",
+            "Le fonctionnement d'une PAC Air/Air s'appuie sur quatre principes essentiels :",
+            "Capture de l'énergie : L'unité extérieure capte les calories présentes dans l'air, même en période de froid.",
+            "Compression : Ces calories sont converties en chaleur grâce à un fluide frigorigène circulant dans le système.",
+            "Diffusion de la chaleur : L'air chaud est distribué dans votre habitation par des unités murales, des consoles ou des gaines, selon votre configuration.",
+            "Mode réversible : En été, le système inverse son fonctionnement pour extraire la chaleur de votre intérieur et le rafraîchir.",
           ],
         },
         {
@@ -116,6 +121,26 @@ export const services: { [key: string]: Service } = {
     eco: 85,
     efficiency: 100,
     esthetic: 90,
+    accordion: {
+      sections: [
+        {
+          title: "En résumé",
+          content: [
+            "Utilisant les calories présentes dans l’air pour chauffer votre eau, le cumulus thermodynamique est une installation écologique et abordable.",
+            "Le chauffe-eau thermodynamique, ou CET, capte l’énergie gratuite présente dans l’air grâce à son fonctionnement comparable à une pompe à chaleur aérothermique, ce qui lui permet de consommer jusqu’à 3 fois moins d’énergie qu’un chauffe-eau électrique.",
+            "Un ballon thermodynamique émet 10 fois moins de CO2 qu’un chauffe-eau fonctionnant au gaz ou au fioul selon la marque retenue. Comme il ne rejette quasiment pas de gaz à effet de serre, son impact sur l’environnement est minime.",
+            "L’échangeur restitue ensuite la chaleur créée au ballon d’eau pour produire de l’eau chaude sanitaire.",
+            "Le processus se répète chaque fois que le fluide redevient liquide.",
+            "Si les températures extérieures sont trop faibles en hiver, un système électrique prend le relais du CET, de même si votre consommation connaît un bref pic.",
+            "Le chauffe-eau thermodynamique présente son meilleur rendement à des températures comprises entre -5°C et 35°C. S’il fait plus froid chez vous l’hiver, vous devrez coupler votre CET avec un système de chauffage électrique de l’eau.",
+            "Cette solution de secours reste dédiée aux situations occasionnelles. Si vous utilisez votre chauffe-eau thermodynamique dans des conditions optimales, sa consommation d’électricité sera réduite.",
+            "Pour installer un chauffe-eau thermodynamique, nous réalisons trois types de raccordement : électrique, hydraulique et aéraulique. Cela peut sembler technique, mais en réalité l’installation d’un chauffe-eau thermodynamique prend environ 4 petites heures le temps de procéder à tous les raccordements.",
+            "Vous serez également satisfait d’apprendre qu’un CET ne nécessite pas de contrat d’entretien. Une ou deux fois par an, détartrez la cuve et l’anode de votre chauffe-eau pour optimiser son fonctionnement pour les mois suivants.",
+            "L'entretien d'un chauffe-eau thermodynamique est vraiment très simple et rapide !",
+          ],
+        },
+      ],
+    },
   },
   isolation: {
     name: "isolation",
@@ -156,15 +181,17 @@ export const services: { [key: string]: Service } = {
         {
           title: "Isolation des planchers bas",
           content: [
-            "Pour isoler vos planchers bas, les dalles de polystyrène extrudé offriront une isolation sonore et thermique parfaite pour vos espaces.",
+            "L'isolation des planchers bas est essentielle pour limiter les pertes de chaleur par le sol, représentant jusqu'à 10 % des déperditions énergétiques d'un logement.",
+            "Une isolation efficace de vos planchers améliore votre confort thermique en toute saison et permet de réaliser des économies d'énergie importantes. Cette solution élimine la sensation désagréable de sol froid et prévient les remontées d'humidité.",
+            "Chez Genie Clim France, nous vous proposons des techniques d'isolation performantes adaptées à votre habitation, garantissant un confort durable et une réduction de vos factures.",
           ],
         },
         {
           title: "ITE (isolation thermique extérieure)",
           content: [
-            "L'isolation thermique extérieure (ITE) est une solution efficace pour réduire les pertes de chaleur dans votre maison.",
-            "Elle permet de réduire jusqu'à 30% vos factures de chauffage !",
-            "L'ITE est une solution écologique et économique pour votre maison.",
+            "L'Isolation Thermique par l'Extérieur (ITE) consiste à envelopper votre habitation d'une couche isolante pour réduire significativement les pertes de chaleur.",
+            "Cette solution présente plusieurs avantages majeurs : elle améliore la performance énergétique, élimine les ponts thermiques, assure un meilleur confort quelle que soit la saison et augmente la valeur de votre bien immobilier.",
+            "L'ITE permet également de moderniser l'aspect de votre façade. Avec Genie Clim France, profitez d'une isolation personnalisée, mise en œuvre par des experts, pour un habitat plus économique et respectueux de l'environnement.",
           ],
         },
       ],
@@ -192,6 +219,21 @@ export const services: { [key: string]: Service } = {
     eco: 85,
     efficiency: 100,
     esthetic: 100,
+    accordion: {
+      sections: [
+        {
+          title: "VMC : Ventilation Mécanique Contrôlée",
+          content: [
+            "La VMC est essentielle pour garantir un air intérieur sain et limiter l’humidité dans votre logement.",
+            "Elle renouvelle l’air en continu, éliminant les polluants, les mauvaises odeurs et l’excès d’humidité, tout en préservant la qualité de l’air que vous respirez.",
+            "Opter pour une VMC performante, c’est :",
+            "Améliorer la qualité de l’air intérieur en évacuant l’humidité et les allergènes.",
+            "Réaliser des économies d’énergie grâce à un système optimisé.",
+            "Prévenir les problèmes d’humidité et de moisissures dans votre maison.",
+          ],
+        },
+      ],
+    },
   },
   menuiserie: {
     name: "menuiserie",
@@ -213,5 +255,18 @@ export const services: { [key: string]: Service } = {
     eco: 85,
     efficiency: 85,
     esthetic: 100,
+    accordion: {
+      sections: [
+        {
+          title: "La rénovation de vos fenêtres",
+          content: [
+            "Les fenêtres jouent un rôle clé dans la performance énergétique de votre logement. Mal isolées, elles peuvent représenter jusqu’à 15 % des pertes de chaleur.",
+            "Fenêtres en PVC Blanc",
+            "Les fenêtres en PVC blanc sont la solution idéale pour améliorer l’isolation thermique et acoustique de votre logement. Chez Genie Clim France, nous vous proposons des fenêtres sur-mesure.",
+            "Grâce à leurs excellentes performances d’isolation thermique, nos fenêtres en PVC blanc limitent les déperditions énergétiques, réduisent les nuisances sonores et contribuent à la baisse de vos factures de chauffage. Robustes, faciles d’entretien et résistantes aux intempéries, elles offrent également un design sobre et intemporel qui s’intègre parfaitement à tous les styles d’habitations.",
+          ],
+        },
+      ],
+    },
   },
 };
