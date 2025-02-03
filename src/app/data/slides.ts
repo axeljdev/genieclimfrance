@@ -10,6 +10,7 @@ interface Slide {
   title: string;
   content: string[];
   image: StaticImageData;
+  link: string;
 }
 
 export const slides: Slide[] = [
@@ -21,6 +22,7 @@ export const slides: Slide[] = [
       "Vous pouvez réaliser jusqu'à 50% d'économie sur votre facture d'électricité en utilisant un chauffe-eau thermodynamique.",
     ],
     image: ballon,
+    link: "/services/ballon-thermodynamique",
   },
   {
     id: 2,
@@ -30,6 +32,7 @@ export const slides: Slide[] = [
       "Notre programme complet inclut l'isolation des combles et des planchers bas pour une rénovation énergétique intégrale de votre habitation.",
     ],
     image: isolation,
+    link: "/services/isolation",
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ export const slides: Slide[] = [
       "Elle contribue à un mode de vie plus durable tout en augmentant la valeur de votre habitation.",
     ],
     image: pac,
+    link: "/services/pompe-a-chaleur",
   },
   {
     id: 4,
@@ -48,6 +52,7 @@ export const slides: Slide[] = [
       "Genie Clim France installe des solutions uniques et sur mesure pour garantir une qualité d'air intérieur optimale tout en minimisant les pertes de chaleur.",
     ],
     image: vmc,
+    link: "/services/vmc",
   },
   {
     id: 5,
@@ -57,5 +62,6 @@ export const slides: Slide[] = [
       "Découvrez notre gamme de fenêtres, portes et volets alliant design, durabilité et performance énergétique.",
     ],
     image: menuiseries,
+    link: "/services/menuiserie",
   },
 ];
