@@ -2,6 +2,7 @@ import SocialLink from "./SocialLink";
 import { IoMail } from "react-icons/io5";
 import { IoMdPhonePortrait } from "react-icons/io";
 import Link from "next/link";
+import FacebookLike from "./FacebookLike";
 
 function Footer() {
   return (
@@ -33,6 +34,9 @@ function Footer() {
             <li className="flex items-center gap-2 hover:text-tertiary transition-colors duration-300 cursor-pointer">
               <IoMdPhonePortrait className="text-primary" />
               <a href="tel:0972121401">09 72 12 14 01</a>
+            </li>
+            <li className="mt-2">
+              <FacebookLike />
             </li>
           </ul>
         </div>
