@@ -21,7 +21,7 @@ function Footer() {
           </p>
         </div>
         <div>
-          <h3 className="text-lg font-bold mt-8 text-tertiary mb-2">
+          <h3 className="text-lg font-bold mt-8 lg:mt-0 text-tertiary mb-2">
             Coordonnées
           </h3>
           <ul className="flex flex-col gap-2">
@@ -41,7 +41,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="text-lg font-bold text-tertiary mt-8 mb-2">
+          <h3 className="text-lg font-bold text-tertiary mt-8 lg:mt-0 mb-2">
             Liens utiles
           </h3>
           <ul className="flex flex-col gap-2">
@@ -63,7 +63,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="text-lg font-bold text-tertiary mt-8 mb-2">
+          <h3 className="text-lg font-bold text-tertiary mt-8 lg:mt-0 mb-2">
             Produits
           </h3>
           <ul className="flex flex-col gap-2">

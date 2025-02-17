@@ -50,9 +50,26 @@ const Kollektif = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://genieclimfrance.fr"),
   title: "GénieClim France",
   description:
     "GENIE CLIM FRANCE est le spécialiste de la rénovation globale énergétique. Profitez de la rénovation de votre système de chauffage, de distribution d'eau chaude sanitaire mais également de votre isolation à prix mini.",
+  openGraph: {
+    type: "website",
+    url: "https://genieclimfrance.fr",
+    title: "GénieClim France",
+    description:
+      "GENIE CLIM FRANCE est le spécialiste de la rénovation globale énergétique. Profitez de la rénovation de votre système de chauffage, de distribution d'eau chaude sanitaire mais également de votre isolation à prix mini.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "GénieClim France",
+      },
+    ],
+    locale: "fr_FR",
+  },
 };
 
 export default function RootLayout({
