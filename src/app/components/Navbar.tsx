@@ -51,7 +51,7 @@ function Navbar() {
             {isLogoDropdownOpen && (
               <div className="dropdown-content absolute left-0 top-full bg-white p-4 shadow-lg rounded-lg mt-10 z-50">
                 <a
-                  href="https://genieclimfrance.fr"
+                  href="https://geniesolairefrance.fr"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
