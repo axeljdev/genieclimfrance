@@ -10,6 +10,7 @@ import { GrValidate } from "react-icons/gr";
 import { IoIosArrowDown } from "react-icons/io";
 import Link from "next/link";
 import logoGSF from "@/../public/logo-GSF.svg";
+import { FaChevronDown } from "react-icons/fa6";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,7 @@ function Navbar() {
               isLogoDropdownOpen ? "active" : ""
             }`}
           >
-            <div className="flex items-center gap-2 mx-2 flex-1 px-2">
+            <div className="flex items-center gap-2">
               <Link href="/">
                 <Image
                   src={logo}
@@ -42,29 +43,29 @@ function Navbar() {
               </Link>
               <button
                 onClick={() => setIsLogoDropdownOpen(!isLogoDropdownOpen)}
-                className="p-2"
+                className="p-2 hover:bg-gray-300 rounded-lg transition-colors"
               >
-                <IoIosArrowDown className="text-primary" />
+                <FaChevronDown className="text-gray-400 text-xs" />
               </button>
             </div>
             {isLogoDropdownOpen && (
               <div className="dropdown-content absolute left-0 top-full bg-white p-4 shadow-lg rounded-lg mt-10 z-50">
                 <a
-                  href="https://geniesolairefrance.fr"
+                  href="https://genieclimfrance.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:opacity-80 transition-opacity block"
                 >
                   <Image
                     src={logoGSF}
                     alt="logo GSF"
                     width={250}
-                    className="lg:w-[250px]"
+                    className="hover:opacity-80 transition-opacity"
                   />
                 </a>
               </div>
             )}
           </div>
+          <div className="flex-1"></div>
           <div className="flex-none lg:hidden">
             <a
               href="tel:+33972121401"
