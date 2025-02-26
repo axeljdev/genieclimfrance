@@ -1,48 +1,5 @@
-import test from "../../../../public/test.png";
 import CardTeam from "./CardTeam";
-
-const cards = [
-  {
-    id: 1,
-    img: test,
-    name: "Camille Pernot",
-    role: "Présidente",
-    mail: "contact@genielimfrance.fr",
-    phone: "07 69 76 26 36",
-  },
-  {
-    id: 2,
-    img: test,
-    name: "Raphaël Pereira",
-    role: "Directeur Technique",
-    mail: "contact@genielimfrance.fr",
-    phone: "07 69 76 26 36",
-  },
-  {
-    id: 3,
-    img: test,
-    name: "Carla Gaurat",
-    role: "Technico-Commercial",
-    mail: "c.gaurat@genielimfrance.fr",
-    phone: "07 69 76 26 36",
-  },
-  {
-    id: 5,
-    img: test,
-    name: "Amélie Auger",
-    role: "Analyste administrative",
-    mail: "a.auger@genielimfrance.fr",
-    phone: "07 69 76 26 36",
-  },
-  {
-    id: 7,
-    img: test,
-    name: "Sylvie Maurat",
-    role: "Téléprospectrice",
-    mail: "call2@genielimfrance.fr",
-    phone: "07 69 76 26 36",
-  },
-];
+import cards from "@/app/data/team";
 
 function OurTeam() {
   return (

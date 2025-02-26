@@ -12,7 +12,7 @@ interface CardTeamProps {
 
 function CardTeam({ img, name, role, mail, phone }: CardTeamProps) {
   return (
-    <div className="flex items-center justify-end bg-[#F5F5F5] p-6 rounded-3xl rounded-bl-none text-secondary relative w-96 h-32 shadow-xl lg:w-[30%] lg:p-0">
+    <div className="flex items-center justify-end bg-[#F5F5F5] p-6 rounded-3xl rounded-bl-none text-secondary relative w-96 h-36 xl:h-32 shadow-xl lg:w-[30%] lg:p-0">
       <Image
         src={img}
         alt={name}
@@ -20,10 +20,8 @@ function CardTeam({ img, name, role, mail, phone }: CardTeamProps) {
         height={140}
         className="absolute left-0 bottom-0"
       />
-      <div className="flex flex-col w-1/2 lg:pl-36 lg:w-full 2xl:pl-48">
-        <h3 className=" font-emOne uppercase 2xl:text-xl text-nowrap">
-          {name}
-        </h3>
+      <div className="flex flex-col w-1/2 lg:pl-36 lg:w-full 2xl:pl-40">
+        <h3 className=" font-emOne uppercase 2xl:text-xl">{name}</h3>
         <p className="text-xs text-primary mb-2 uppercase 2xl:text-sm">
           {role}
         </p>
