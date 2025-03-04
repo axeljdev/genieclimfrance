@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer/Footer";
 import Axeptio from "./components/Axeptio";
+import Script from "next/script";
 
 // EmOne variants
 const EmOneSemiBold = localFont({
@@ -77,8 +78,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaTrackingId = process.env.NEXT_PUBLIC_GA_TRACKING_ID;
   return (
     <html lang="fr">
+      <head>
+        {gaTrackingId ? (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaTrackingId}');
+                `}
+            </Script>
+          </>
+        ) : null}
+      </head>
       <body className={`${EmOneSemiBold.variable} ${Kollektif.variable}`}>
         <Navbar />
         {children}
