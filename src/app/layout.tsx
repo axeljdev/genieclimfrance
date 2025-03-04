@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer/Footer";
 import Axeptio from "./components/Axeptio";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 // EmOne variants
 const EmOneSemiBold = localFont({
@@ -104,6 +105,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Axeptio />
+        <Analytics />
       </body>
     </html>
   );
