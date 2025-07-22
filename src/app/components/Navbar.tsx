@@ -139,6 +139,45 @@ function Navbar() {
                       VMC
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="https://www.geniesolairefrance.fr/"
+                      className="hover:text-[#F1C629] hover:bg-transparent active:bg-[#F1C629] focus-visible:outline-primary"
+                    >
+                      PANNEAUX SOLAIRES
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="dropdown">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost focus:text-primary font-emOne hover:text-primary"
+                >
+                  LES AIDES
+                  <IoIosArrowDown className="text-xl text-primary" />
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+                >
+                  <li>
+                    <Link
+                      href="/aides/renovation-geste"
+                      className="hover:text-primary uppercase hover:bg-transparent active:bg-primary focus-visible:outline-primary"
+                    >
+                      Rénovation geste par geste
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/aides/renovation-ampleur"
+                      className="hover:text-primary uppercase hover:bg-transparent active:bg-primary focus-visible:outline-primary"
+                    >
+                      Rénovation d&apos;ampleur
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <li
@@ -153,9 +192,9 @@ function Navbar() {
                 className="font-emOne hover:text-primary focus-visible:outline-primary"
                 tabIndex={0}
               >
-                <Link href="/notre-mission#retrouvez-nous">
+                <Link href="/contact">
                   <FaMapLocationDot className="text-2xl text-primary focus-visible:outline-primary" />
-                  OÙ NOUS TROUVER
+                  CONTACTEZ-NOUS
                 </Link>
               </li>
               <li>
@@ -240,6 +279,47 @@ function Navbar() {
                     VMC
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="https://www.geniesolairefrance.fr/"
+                    tabIndex={0}
+                    onClick={closeDrawer}
+                  >
+                    PANNEAUX SOLAIRES
+                  </Link>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details
+              onToggle={(e) => setIsOpen((e.target as HTMLDetailsElement).open)}
+            >
+              <summary
+                className={`w-fit ${isOpen ? "text-primary" : "text-black"}`}
+                tabIndex={0}
+              >
+                LES AIDES
+              </summary>
+              <ul>
+                <li className="uppercase">
+                  <Link
+                    href="/aides/renovation-geste"
+                    tabIndex={0}
+                    onClick={closeDrawer}
+                  >
+                    Rénovation geste par geste
+                  </Link>
+                </li>
+                <li className="uppercase">
+                  <Link
+                    href="/aides/renovation-ampleur"
+                    tabIndex={0}
+                    onClick={closeDrawer}
+                  >
+                    Rénovation d&apos;ampleur
+                  </Link>
+                </li>
               </ul>
             </details>
           </li>
@@ -249,8 +329,8 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/eligibility" tabIndex={0} onClick={closeDrawer}>
-              OÙ NOUS TROUVER
+            <Link href="/contact" tabIndex={0} onClick={closeDrawer}>
+              CONTACTEZ-NOUS
               <FaMapLocationDot className="text-2xl text-primary" />
             </Link>
           </li>

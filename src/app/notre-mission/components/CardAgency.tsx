@@ -8,6 +8,7 @@ function CardAgency({
   city,
   phone,
   link,
+  isContactPage,
 }: {
   name: string;
   address: string;
@@ -15,9 +16,14 @@ function CardAgency({
   city: string;
   phone: string;
   link: string;
+  isContactPage?: boolean;
 }) {
   return (
-    <div className="w-96 h-fit bg-[#F5F5F5] p-6 rounded-3xl rounded-bl-none text-secondary relative shadow-xl flex flex-col lg:w-[48%] lg:h-auto">
+    <div
+      className={`w-full max-w-96 h-fit bg-[#F5F5F5] p-6 rounded-3xl rounded-bl-none text-secondary relative shadow-xl flex flex-col   ${
+        isContactPage ? "md:w-full md:max-w-none" : "lg:w-[48%] lg:h-auto"
+      }`}
+    >
       <p className="text-sm mb-4 font-kollektif 2xl:text-lg">{isOpen()}</p>
       <h4 className="text-lg font-bold text-primary uppercase font-kollektif mb-4 2xl:text-2xl">
         {name}

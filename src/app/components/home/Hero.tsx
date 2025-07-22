@@ -27,7 +27,7 @@ function Hero() {
               <IoIosArrowForward />
             </Link>
             <Link
-              href="/#contact-form"
+              href="/contact"
               className="btn xl:btn-lg bg-secondary border-none text-white text-md xl:text-lg font-bold uppercase mt-4 lg:mt-0 px-4 rounded-full hover:bg-secondary/80"
             >
               Contactez-nous

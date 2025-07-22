@@ -1,6 +1,5 @@
-import Agency from "./Agency";
 import OurRole from "./OurRole";
-import OurTeam from "./OurTeam";
+import Link from "next/link";
 
 function Article() {
   return (
@@ -20,12 +19,15 @@ function Article() {
         est là pour concrétiser vos désirs.
       </p>
       <p className="font-kollektif mt-4 lg:text-lg 2xl:text-xl">
-        <span className="font-bold text-primary">Contactez-nous</span>, et voyez
-        en quoi nous pouvons vous aider.
+        <Link
+          href="/contact"
+          className="font-bold text-primary hover:underline hover:text-black"
+        >
+          Contactez-nous
+        </Link>
+        , et voyez en quoi nous pouvons vous aider.
       </p>
       <OurRole />
-      <OurTeam />
-      <Agency />
     </article>
   );
 }

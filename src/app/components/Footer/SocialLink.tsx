@@ -7,7 +7,7 @@ import {
 
 function SocialLink() {
   return (
-    <section className="flex flex-col lg:flex-row justify-center lg:justify-normal items-center bg-gradient-to-r from-[#3FAA3B] via-[#078734] to-[#038534] p-8">
+    <section className="flex flex-col lg:flex-row justify-center lg:justify-normal items-center bg-gradient-to-r from-[#3FAA3B] via-[#078734] to-[#038534] p-8 lg:px-28 xl:px-40 2xl:px-80">
       <ul className="flex gap-4 justify-between lg:justify-normal lg:w-1/3 w-full">
         <li className="btn btn-circle text-2xl bg-tertiary rounded-full">
           <a href="https://www.instagram.com/genieclimfrance/" target="_blank">

@@ -10,7 +10,7 @@ export default function Axeptio() {
     <>
       <Script
         id="axeptio-config"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             window.axeptioSettings = {
@@ -31,7 +31,7 @@ export default function Axeptio() {
       />
       <Script
         src="https://static.axept.io/sdk.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         id="axeptio-sdk"
       />
     </>

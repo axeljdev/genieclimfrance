@@ -2,7 +2,13 @@
 
 import InfoContact from "./InfoContact";
 import { useState } from "react";
-function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
+function FormDevis({
+  isServicePage,
+  isContactPage,
+}: {
+  isServicePage?: boolean;
+  isContactPage?: boolean;
+}) {
   const [Name, setName] = useState("");
   const [FirstName, setFirstName] = useState("");
   const [Email, setEmail] = useState("");
@@ -60,26 +66,34 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
   return (
     <section
       id="contact-form"
-      className={`flex flex-col lg:flex-row gap-4 p-6 bg-secondary lg:px-[10.5rem] 2xl:px-[21.5rem] ${
+      className={`flex flex-col lg:flex-row gap-4 bg-secondary ${
+        isContactPage
+          ? "lg:p-0 lg:px-0 2xl:px-0 h-full"
+          : "p-6 lg:px-[10.5rem] 2xl:px-[21.5rem]"
+      } ${
         isServicePage
           ? "lg:bg-white"
           : "lg:bg-[url('/bg-contact.png')] lg:bg-cover lg:bg-center lg:bg-no-repeat"
       }`}
     >
       <div
-        className={`lg:bg-secondary lg:rounded-3xl ${
-          isServicePage ? "w-full" : "lg:w-2/3"
-        } lg:p-12`}
+        className={`lg:bg-secondary ${
+          isContactPage
+            ? "lg:rounded-none h-full flex flex-col p-4 md:p-0"
+            : "lg:rounded-3xl"
+        } ${isServicePage ? "w-full" : "lg:w-2/3"} lg:p-12`}
       >
-        <h3 className="text-2xl font-emOne text-tertiary text-start lg:pl-12">
-          Demander un devis
+        <h3 className="text-2xl font-emOne text-tertiary text-start lg:pl-12 after:content-[''] after:block after:w-10 after:h-1 after:bg-tertiary after:mt-2 after:mb-4">
+          {isContactPage ? "Contactez-nous" : "Demander un devis"}
         </h3>
         <form
-          className="flex flex-col gap-4 p-6 items-center lg:px-12"
+          className={`flex flex-col gap-4 p-6 items-center lg:px-12 ${
+            isContactPage ? "flex-1 justify-center" : ""
+          }`}
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col lg:flex-row lg:justify-between w-full lg:gap-8">
-            <label className="form-control w-full lg:w-1/3 max-w-xs lg:max-w-none">
+            <label className="form-control w-full lg:w-1/3 lg:max-w-none">
               <div className="label">
                 <span className="label-text text-lg font-kollektif text-tertiary">
                   Nom*
@@ -90,11 +104,11 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
                 placeholder="Votre nom"
                 value={Name}
                 onChange={(e) => setName(e.target.value)}
-                className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
+                className="input input-bordered input-md w-full focus:outline-primary focus:ring-primary"
                 required
               />
             </label>
-            <label className="form-control w-full lg:w-1/3 max-w-xs lg:max-w-none">
+            <label className="form-control w-full lg:w-1/3 lg:max-w-none">
               <div className="label">
                 <span className="label-text text-lg font-kollektif text-tertiary">
                   Prénom*
@@ -105,11 +119,11 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
                 placeholder="Votre prénom"
                 value={FirstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
+                className="input input-bordered input-md w-full focus:outline-primary focus:ring-primary"
                 required
               />
             </label>
-            <label className="form-control w-full lg:w-1/3 max-w-xs lg:max-w-none">
+            <label className="form-control w-full lg:w-1/3 lg:max-w-none">
               <div className="label">
                 <span className="label-text text-lg font-kollektif text-tertiary">
                   Code postal*
@@ -120,50 +134,52 @@ function FormDevis({ isServicePage }: { isServicePage?: boolean }) {
                 placeholder="Votre code postal"
                 value={Zipcode}
                 onChange={(e) => setZipcode(e.target.value)}
-                className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
+                className="input input-bordered input-md w-full focus:outline-primary focus:ring-primary"
                 required
               />
             </label>
           </div>
-          <div className="flex flex-col lg:flex-row w-full lg:gap-8">
-            <label className="form-control w-full lg:w-1/2 max-w-xs lg:max-w-none">
+
+          <div className="flex flex-col lg:flex-row lg:justify-between w-full lg:gap-8">
+            <label className="form-control w-full lg:w-1/2 lg:max-w-none">
               <div className="label">
                 <span className="label-text text-lg font-kollektif text-tertiary">
                   Email*
                 </span>
               </div>
               <input
-                type="text"
+                type="email"
                 placeholder="Votre email"
                 value={Email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
+                className="input input-bordered input-md w-full focus:outline-primary focus:ring-primary"
                 required
               />
             </label>
-            <label className="form-control w-full lg:w-1/2 max-w-xs lg:max-w-none">
+            <label className="form-control w-full lg:w-1/2 lg:max-w-none">
               <div className="label">
                 <span className="label-text text-lg font-kollektif text-tertiary">
                   Téléphone
                 </span>
               </div>
               <input
-                type="text"
-                placeholder="Votre téléphone"
-                className="input input-bordered input-md w-full max-w-xs focus:outline-primary focus:ring-primary"
+                type="tel"
+                placeholder="Votre numéro"
                 value={Phone}
                 onChange={(e) => setPhone(e.target.value)}
+                className="input input-bordered input-md w-full focus:outline-primary focus:ring-primary"
               />
             </label>
           </div>
-          <label className="form-control w-full max-w-xs lg:max-w-none">
+
+          <label className="form-control w-full lg:max-w-none">
             <div className="label">
               <span className="label-text text-lg font-kollektif text-tertiary">
                 Message*
               </span>
             </div>
             <textarea
-              className="textarea textarea-bordered h-24 focus:outline-primary focus:ring-primary"
+              className="textarea textarea-bordered h-24 w-full focus:outline-primary focus:ring-primary"
               placeholder="Votre message"
               required
               value={Message}

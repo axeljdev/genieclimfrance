@@ -9,7 +9,7 @@ function Article() {
           Génieclim france
         </h2>
         <h3 className="text-sm font-bold uppercase pb-4 2xl:text-xl after:content-[''] after:mt-2 after:block after:w-10 after:h-[0.35rem] after:bg-primary font-emOne">
-          La référence de la rénovation globale énergétique
+          La référence de la rénovation énergétique
         </h3>
         <p className="pb-4 font-kollektif lg:pt-6">
           GénieClim France, votre partenaire de confiance pour tous vos besoins

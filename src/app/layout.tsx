@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Axeptio from "./components/Axeptio";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import NoSSR from "./components/NoSSR";
 
 // EmOne variants
 const EmOneSemiBold = localFont({
@@ -86,10 +87,10 @@ export default function RootLayout({
         {gaTrackingId ? (
           <>
             <Script
-              strategy="afterInteractive"
+              strategy="lazyOnload"
               src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
             />
-            <Script id="google-analytics" strategy="afterInteractive">
+            <Script id="google-analytics" strategy="lazyOnload">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
@@ -104,8 +105,10 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <Axeptio />
-        <Analytics />
+        <NoSSR>
+          <Axeptio />
+          <Analytics />
+        </NoSSR>
       </body>
     </html>
   );

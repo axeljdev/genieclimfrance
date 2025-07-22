@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value:
+              "frame-src 'self' https://www.facebook.com https://web.facebook.com https://static.xx.fbcdn.net",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {

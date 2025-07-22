@@ -4,6 +4,7 @@ import menuiseries from "../../../../public/icon/menuiseries.svg";
 import vmc from "../../../../public/icon/vmc.svg";
 import ballon from "../../../../public/icon/ballon.svg";
 import ButtonSolution from "./ButtonSolution";
+import solaires from "../../../../public/icon/solaire.svg";
 
 function Solutions() {
   const solutions = [
@@ -26,6 +27,12 @@ function Solutions() {
       icon: menuiseries,
       title: "Menuiserie",
       link: "/services/menuiserie",
+    },
+    {
+      id: 6,
+      icon: solaires,
+      title: "Panneaux solaires",
+      link: "https://www.geniesolairefrance.fr/",
     },
   ];
   return (
