@@ -1,41 +1,49 @@
 import { NextResponse } from "next/server";
-import sgMail from "@sendgrid/mail";
 
-const apiKey = process.env.SENDGRID_API_KEY;
-if (!apiKey || !apiKey.startsWith("SG.")) {
-  throw new Error("Configuration SendGrid invalide");
-}
-
-sgMail.setApiKey(apiKey);
-
-interface SendGridErrorResponse {
-  message: string;
-  code: number;
-  response?: {
-    body: unknown;
-  };
+const apiKey = process.env.BREVO_API_KEY;
+if (!apiKey) {
+  console.warn("Clé API Brevo manquante");
 }
 
 export async function POST(request: Request) {
+  if (!apiKey) {
+    console.error("Clé API Brevo manquante");
+    return NextResponse.json(
+      { message: "Configuration du serveur d'emails manquante" },
+      { status: 500 }
+    );
+  }
+
   try {
     const body = await request.json();
     const { nom, email, telephone, message, adresse, codePostal } = body;
 
-    if (!nom || !email || !message) {
+    // Validation de l'email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!nom || !email || !message || !emailRegex.test(email)) {
       return NextResponse.json(
-        { message: "Champs obligatoires manquants" },
+        {
+          message: "Champs obligatoires manquants ou email invalide",
+          details: !emailRegex.test(email)
+            ? "Format d'email invalide"
+            : "Champs manquants",
+        },
         { status: 400 }
       );
     }
 
-    const msg = {
-      to: process.env.RECIPIENT_EMAIL || "a.janiak@genieclimfrance.fr",
-      from: {
-        email: process.env.SENDER_EMAIL || "a.janiak@genieclimfrance.fr",
+    const emailData = {
+      sender: {
+        email: process.env.ENDER_EMAIL || "a.janiak@genieclimfrance.fr",
         name: "GENIE CLIM FRANCE",
       },
+      to: [
+        {
+          email: process.env.RECIPIENT_EMAIL || "a.janiak@genieclimfrance.fr",
+        },
+      ],
       subject: `Nouveau message de ${nom} depuis le formulaire de contact`,
-      text: `
+      textContent: `
         Nouveau message de: ${nom}
         Email: ${email}
         Téléphone: ${telephone || "Non renseigné"}
@@ -43,7 +51,7 @@ export async function POST(request: Request) {
         Code Postal: ${codePostal || "Non renseigné"}
         Message: ${message}
       `,
-      html: `
+      htmlContent: `
         <h2>Nouveau message de contact</h2>
         <p><strong>Nom:</strong> ${nom}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -54,26 +62,46 @@ export async function POST(request: Request) {
     };
 
     try {
-      await sgMail.send(msg);
-      return NextResponse.json({ message: "Email envoyé avec succès" });
-    } catch (sendError: unknown) {
-      if (
-        sendError &&
-        typeof sendError === "object" &&
-        "message" in sendError &&
-        "code" in sendError
-      ) {
-        const typedError = sendError as SendGridErrorResponse;
-        return NextResponse.json(
-          {
-            message: "Erreur lors de l'envoi de l'email",
-            details: `SendGrid: ${typedError.message}`,
-          },
-          { status: typedError.code || 500 }
+      console.log("Tentative d'envoi avec configuration:", {
+        to: emailData.to[0].email,
+        from: emailData.sender.email,
+        subject: emailData.subject,
+        apiKeyPresent: !!apiKey,
+      });
+
+      const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "api-key": apiKey,
+        },
+        body: JSON.stringify(emailData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(
+          `Erreur Brevo: ${errorData.message || response.statusText}`
         );
       }
+
+      return NextResponse.json({ message: "Email envoyé avec succès" });
+    } catch (sendError: unknown) {
+      console.error("Erreur Brevo détaillée:", {
+        error: sendError,
+        stack: (sendError as Error).stack,
+      });
+
+      return NextResponse.json(
+        {
+          message: "Erreur lors de l'envoi de l'email",
+          details: (sendError as Error).message,
+        },
+        { status: 500 }
+      );
     }
-  } catch {
+  } catch (error) {
+    console.error("Erreur générale:", error);
     return NextResponse.json(
       { message: "Erreur lors du traitement de la requête" },
       { status: 500 }
